@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { get } from 'http';
 export default class AddRecipe extends React.Component {
@@ -106,6 +107,7 @@ updateFormEntry(e) {
     handleSubmit(e) {
         e.preventDefault();
         const { name, instructions, ingredients} = this.state;
+        
         const recipe = {
             name: name,
             instructions: instructions,
@@ -113,9 +115,11 @@ updateFormEntry(e) {
            
         }
         const STORE = this.props.store;
+        const recipes = this.props.store.recipes
         
-        STORE.recipes.map.then(recipe =>
-            this.props.store.push(recipe));
+        recipes.push(recipe);
+        history.push('/recipe-list');
+
         this.setState({error: null})
     };
 
