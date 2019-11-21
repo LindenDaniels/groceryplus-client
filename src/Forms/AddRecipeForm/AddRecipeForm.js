@@ -2,6 +2,7 @@ import React from 'react';
 
 import { get } from 'http';
 export default class AddRecipe extends React.Component {
+    
     state = {
         name: "",
         ingredients: "",
@@ -34,7 +35,7 @@ updateFormEntry(e) {
 
         value = value.trim();
         
-        if ((name === 'recipe-name') || (name === 'ingredients') || (name === 'instructions')) {
+        if ((name === 'name') || (name === 'ingredients') || (name === 'instructions')) {
             if (value.length < 1) {
                 hasErrors = true
             } 
@@ -52,6 +53,7 @@ updateFormEntry(e) {
     formValid() {
         const { nameValid, ingredientsValid, instructionsValid } = this.state;
         if (nameValid && ingredientsValid && instructionsValid === true){
+            console.log('form validation')
             this.setState({
                 formValid: true,
                 validationMessage: null
@@ -103,9 +105,9 @@ updateFormEntry(e) {
 
     handleSubmit(e) {
         e.preventDefault();
-        const { recipe_name, instructions, ingredients} = this.state;
+        const { name, instructions, ingredients} = this.state;
         const recipe = {
-            name: recipe_name,
+            name: name,
             instructions: instructions,
             ingredients: ingredients,
            
@@ -127,17 +129,19 @@ updateFormEntry(e) {
                 onSubmit={e => this.handleSubmit(e)}>
                 <h2 className="title">Add Recipe</h2>
                 <div className="form-group">
-                  <label htmlFor="recipe-name">Recipe Name</label>
+                  <label htmlFor="name">Recipe Name</label>
                   <input 
                     type="text" 
                     className="field"
-                    name="recipe-name" 
-                    id="recipe-name" 
-                    aria-label="recipe-name"
+                    name="name" 
+                    id="name" 
+                    aria-label="name"
                     aria-required="true"
                     placeholder="Tacos"
-                    onChange={e => this.updateFormEntry(e)}/>
+                    onChange={e => this.updateFormEntry(e)}
+                    />
                 </div>
+                
                 <div className="form-group">
                    <label htmlFor="instructions">Instructions</label>
                    <textarea 
