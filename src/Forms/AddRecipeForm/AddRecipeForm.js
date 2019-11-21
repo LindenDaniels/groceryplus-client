@@ -200,7 +200,8 @@ updateFormEntry(e) {
                  <button 
                     type="button" 
                     className="button"
-                    onClick={()=> this.goBack()}>
+                    //onClick={()=> this.goBack()}
+                    >
                      Cancel
                  </button>
                  <button 
