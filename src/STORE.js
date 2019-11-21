@@ -29,5 +29,25 @@ export default {
            ],
            instructions: 'Lorem ipsum'
         }
+        ],
+    groceryLists: [ 
+        {
+        id: '1',
+        name: 'Christmas cooking',
+        items: [
+            'Cookies',
+            'Milk',
+            'Christmas tree'
         ]
-    }
+    },
+    {
+        id: '2',
+        name: 'Try something new',
+        items: [
+            'Ugli fruit',
+            'Durian',
+            'Horned melon'
+        ]
+    },
+]
+}
