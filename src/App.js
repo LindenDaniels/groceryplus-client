@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, withRouter} from 'react-router-dom';
 import AddRecipe from './Forms/AddRecipeForm/AddRecipeForm';
 import RecipeList from './RecipeList/RecipeList';
 import LandingPage from './LandingPage/LandingPage';

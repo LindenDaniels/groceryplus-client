@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 import { get } from 'http';
-export default class AddRecipe extends React.Component {
+ class AddRecipe extends React.Component {
     
     state = {
         name: "",
@@ -118,7 +119,7 @@ updateFormEntry(e) {
         const recipes = this.props.store.recipes
         
         recipes.push(recipe);
-        history.push('/recipe-list');
+        this.props.history.push('/recipe-list');
 
         this.setState({error: null})
     };
@@ -223,4 +224,6 @@ updateFormEntry(e) {
         )
     }
     }
+
+    export default withRouter(AddRecipe);
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Link, NavLink } from 'react-router-dom';
+import { Route, Link, NavLink, withRouter } from 'react-router-dom';
 import GroceryContext from '../Contexts/GroceryContext'
 import AddRecipe from '../Forms/AddRecipeForm/AddRecipeForm';
 
