@@ -2,7 +2,7 @@ export default {
     recipes: [
         {
           id: '1',
-          header: 'Oatmeal',
+          name: 'Oatmeal',
           ingredients: [ 
               'Oats',
               'Blueberries',
@@ -12,7 +12,7 @@ export default {
         },
         {
           id: '2',
-          header: 'Tacos',
+          name: 'Tacos',
           ingredients: [
               'Beef', 
               'Cheese', 
@@ -22,7 +22,7 @@ export default {
         },
         {
           id: '3',
-          header: 'Toast',
+          name: 'Toast',
           ingredients: [ 
               'Bread', 
               'Jelly', 

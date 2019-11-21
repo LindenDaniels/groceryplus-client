@@ -1,0 +1,30 @@
+import React, { Component } from 'react'
+import { Route, Link, NavLink } from 'react-router-dom';
+import GroceryContext from '../Contexts/GroceryContext'
+import AddRecipe from '../Forms/AddRecipeForm/AddRecipeForm';
+
+export default class NavBar extends Component {
+    //static contextType = GroceryContext;
+  
+  
+    render() {
+      //const { recipes=[] } = this.context
+  
+      return (
+        <div className='NavBar'>
+          
+            <NavLink
+              to='/add-recipe'>
+                Add Recipe
+            </NavLink>
+            <NavLink
+               to='/recipe-list'>
+                   Recipe List
+            </NavLink>
+          
+        </div>
+
+      )
+    }
+  }//<body>
+    //<nav role="navigation">Nav</nav>

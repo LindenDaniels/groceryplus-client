@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { get } from 'http';
 export default class AddRecipe extends React.Component {
     state = {
         name: "",
@@ -14,7 +16,6 @@ export default class AddRecipe extends React.Component {
 updateFormEntry(e) {       
         const name = e.target.name;
         const value = e.target.value;
-        
         
         /*if (e.target.selectedOptions) {
             id = e.target.selectedOptions[0].id;
@@ -32,7 +33,8 @@ updateFormEntry(e) {
         let hasErrors = false;
 
         value = value.trim();
-        if((name === 'name') || (name === 'ingredients') || name === 'instructions') {
+        
+        if ((name === 'recipe-name') || (name === 'ingredients') || (name === 'instructions')) {
             if (value.length < 1) {
                 hasErrors = true
             } 
@@ -42,21 +44,13 @@ updateFormEntry(e) {
             }
         }
         
-        /*else if((name === 'folderSelect') && (value === 'Select')) {
-            hasErrors = true
-        }
-        
-        else {
-            hasErrors = false
-        }*/
-        
         this.setState({
             [`${name}Valid`]: !hasErrors,
         }, this.formValid );
     }
 
     formValid() {
-        const { nameValid, ingredientsValid, instructionsValid, /*folderSelectValid*/ } = this.state;
+        const { nameValid, ingredientsValid, instructionsValid } = this.state;
         if (nameValid && ingredientsValid && instructionsValid === true){
             this.setState({
                 formValid: true,
@@ -69,7 +63,7 @@ updateFormEntry(e) {
         })}
       }
 
-    handleSubmit(e) {
+   /* handleSubmit(e) {
         e.preventDefault();
         const { name, instructions, ingredients  } = this.state;
         const recipe = {
@@ -80,12 +74,50 @@ updateFormEntry(e) {
         }
 
         this.setState({error: null})
-    }
 
+
+        GET(STORE), {
+            method: 'POST',
+            body: JSON.stringify(recipe),
+            headers: {
+                'content-type': 'application/json'
+            }
+        }
+        .then(res => {
+            if (!res.ok) {
+                return res.json().then(err => {
+                    console.log(`Error is: ${err}`)
+                    throw err
+                })
+            }
+            return res.json()
+        }
+        .then(data => {
+            this.goBack()
+            this.context.addRecipe(data)
+        })
+        .catch(err => {
+            this.setState({ err })
+        });
+    };*/
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const { recipe_name, instructions, ingredients} = this.state;
+        const recipe = {
+            name: recipe_name,
+            instructions: instructions,
+            ingredients: ingredients,
+           
+        }
+        const STORE = this.props.store;
         
+        STORE.recipes.map.then(recipe =>
+            this.props.store.push(recipe));
+        this.setState({error: null})
+    };
 
 
-    
     render() {
        
         return (
@@ -111,7 +143,7 @@ updateFormEntry(e) {
                    <textarea 
                         className="field"
                         name="instructions" 
-                        id="instructionst"
+                        id="instructions"
                         aria-label="Instructions"
                         aria-required="false"
                         onChange={e => this.updateFormEntry(e)}/>
@@ -182,3 +214,4 @@ updateFormEntry(e) {
         )
     }
     }
+

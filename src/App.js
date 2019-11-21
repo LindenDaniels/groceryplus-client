@@ -4,6 +4,7 @@ import AddRecipe from './Forms/AddRecipeForm/AddRecipeForm';
 import RecipeList from './RecipeList/RecipeList';
 import LandingPage from './LandingPage/LandingPage';
 import NavBar from './NavBar/NavBar';
+import STORE  from './STORE'
 //import config from './config';
 import './App.css';
 
@@ -16,26 +17,35 @@ class App extends Component {
   render() {
     
     return (
+      
       <div className='App'>
+        <NavBar />
         <header className='App-header'>
           <h1>Grocery Plus</h1>
         </header>
-        <NavBar />
+        
+       
         <div className='content' aria-live='polite'>
           <Route
             path='/add-recipe'
             render={() => <AddRecipe
+                           store={STORE}
             />}
           />
           <Route
             exact
             path='/'
-            render={() => <LandingPage
-              
-            />}
+            render={() => <LandingPage 
+          />}
+          />
+          <Route
+            path='/recipe-list'
+            render={() => <RecipeList
+                           store={STORE}/>}
           />
         </div>
       </div>
+      
     );
   }
 }
