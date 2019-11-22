@@ -22,12 +22,9 @@ class App extends Component {
     return (
       
       <div className='App'>
-        <NavBar />
-        <header className='App-header'>
-          <h1>Grocery Plus</h1>
-        </header>
-        
-       
+        <NavBar
+         className = 'nav-bar' />
+    
         <div className='content' aria-live='polite'>
           <Route
             path='/add-recipe'

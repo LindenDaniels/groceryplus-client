@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import './AddRecipeForm.css';
 
-import { get } from 'http';
+
  class AddRecipe extends React.Component {
     
     state = {
@@ -128,12 +129,16 @@ updateFormEntry(e) {
     render() {
        
         return (
+            <>
+            <header>
+                <h2>Add Recipe</h2>
+            </header>
             
             <form 
                 className="addrecipe-form"
                 onSubmit={e => this.handleSubmit(e)}>
                 <h2 className="title">Add Recipe</h2>
-                <div className="form-group">
+                <div className="form-section">
                   <label htmlFor="name">Recipe Name</label>
                   <input 
                     type="text" 
@@ -147,9 +152,10 @@ updateFormEntry(e) {
                     />
                 </div>
                 
-                <div className="form-group">
+                <div className="form-section">
                    <label htmlFor="instructions">Instructions</label>
-                   <textarea 
+                   <textarea
+                        rows="15"
                         className="field"
                         name="instructions" 
                         id="instructions"
@@ -157,8 +163,8 @@ updateFormEntry(e) {
                         aria-required="false"
                         onChange={e => this.updateFormEntry(e)}/>
                 </div>
-                <div className="form-group">
-                  <label htmlFor="ingredients">Ingredient</label>
+                <div className="form-section">
+                  <label htmlFor="ingredients">Ingredients</label>
                   <input 
                     type="text" 
                     className="field"
@@ -221,6 +227,7 @@ updateFormEntry(e) {
                  </button>
                 </div>
             </form> 
+            </>
         )
     }
     }

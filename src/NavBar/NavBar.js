@@ -14,18 +14,22 @@ export default class NavBar extends Component {
         <div className='NavBar'>
           
             <NavLink
+              className='nav-link'
               to='/add-recipe'>
                 Add Recipe
             </NavLink>
             <NavLink
+               className='nav-link'
                to='/recipe-list'>
                    Recipe List
             </NavLink>
             <NavLink
+               className='nav-link'
                to='/create-grocery-list'>
                    Create a Grocery List
             </NavLink>
             <NavLink
+               className='nav-link'
                to='/grocery-lists'>
                    Grocery Lists
             </NavLink>

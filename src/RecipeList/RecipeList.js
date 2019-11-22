@@ -24,6 +24,10 @@ export default class RecipeList extends Component {
 
     const recipes = this.props.store.recipes
     return (
+        <>
+        <header>
+            <h1>Recipe List</h1>
+        </header>
       <section className='RecipeList'>
         <ul id="recipe__list">
           {recipes.map(recipe => 
@@ -34,6 +38,7 @@ export default class RecipeList extends Component {
           )}
         </ul>
       </section>
+      </>
     )
   }
 

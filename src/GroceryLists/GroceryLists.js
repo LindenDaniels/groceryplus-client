@@ -24,6 +24,10 @@ export default class GroceryLists extends Component {
 
     const groceryLists = this.props.store.groceryLists
     return (
+        <>
+        <header>
+            <h2>Grocery Lists</h2>
+        </header>
       <section className='GroceryLists'>
         <ul id="grocery__lists">
           {groceryLists.map(groceryList => 
@@ -34,6 +38,7 @@ export default class GroceryLists extends Component {
           )}
         </ul>
       </section>
+      </>
     )
   }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import './CreateGroceryList.css';
 
  class CreateGroceryList extends React.Component {
     
@@ -123,12 +124,16 @@ updateFormEntry(e) {
     render() {
        
         return (
-            
+             <>
+            <header>
+                <h1>Create Grocery List</h1>
+            </header>
+            <section>
             <form 
                 className="creategrocerylist-form"
                 onSubmit={e => this.handleSubmit(e)}>
-                <h2 className="title">Create Grocery List</h2>
-                <div className="form-group">
+                <h2 className="title">Grocery List</h2>
+                <div className="form-section">
                   <label htmlFor="name">Name</label>
                   <input 
                     type="text" 
@@ -141,8 +146,9 @@ updateFormEntry(e) {
                     onChange={e => this.updateFormEntry(e)}
                     />
                 </div>
+
                 
-                <div className="form-group">
+                <div className="form-section">
                   <label htmlFor="items">Items</label>
                   <input 
                     type="text" 
@@ -206,6 +212,8 @@ updateFormEntry(e) {
                  </button>
                 </div>
             </form> 
+            </section>
+            </>
         )
     }
     }
