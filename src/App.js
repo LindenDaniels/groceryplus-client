@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Link, withRouter} from 'react-router-dom';
 import AddRecipe from './Forms/AddRecipeForm/AddRecipeForm';
+import CreateGroceryList from './Forms/CreateGroceryList/CreateGroceryList';
 import RecipeList from './RecipeList/RecipeList';
+import GroceryLists from './GroceryLists/GroceryLists';
 import LandingPage from './LandingPage/LandingPage';
 import NavBar from './NavBar/NavBar';
 import STORE  from './STORE'
@@ -41,6 +43,16 @@ class App extends Component {
           <Route
             path='/recipe-list'
             render={() => <RecipeList
+                           store={STORE}/>}
+          />
+          <Route
+            path='/grocery-lists'
+            render={() => <GroceryLists
+                           store={STORE}/>}
+          />
+          <Route
+            path='/create-grocery-list'
+            render={() => <CreateGroceryList
                            store={STORE}/>}
           />
         </div>
