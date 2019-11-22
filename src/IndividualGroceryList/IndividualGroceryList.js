@@ -20,25 +20,22 @@ export default class GroceryList extends Component {
   
       const groceryLists = this.props.store.groceryLists
       return (
-          (Object.keys(groceryLists)),
+          Object.keys(groceryLists).map(function(id, name, items) {
+              return (
         <section className='GroceryLists'>
-          <ul>
-            
-
-            
-              <li key={groceryLists.id}>
-                {groceryLists.name}
-                {groceryLists.items}
+          <ul key={id}>
+              <li key={id}>
+                {name}
+                {items}
               </li>
-    }
-              
-            )}
           </ul>
         </section>
-      )
+    )
+}))
     }
-  
-  }
+}
+
+
   
   
   GroceryList.propType = {
