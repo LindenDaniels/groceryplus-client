@@ -4,6 +4,7 @@ import AddRecipe from './Forms/AddRecipeForm/AddRecipeForm';
 import CreateGroceryList from './Forms/CreateGroceryList/CreateGroceryList';
 import RecipeList from './RecipeList/RecipeList';
 import GroceryLists from './GroceryLists/GroceryLists';
+import GroceryList from './IndividualGroceryList/IndividualGroceryList';
 import LandingPage from './LandingPage/LandingPage';
 import NavBar from './NavBar/NavBar';
 import STORE  from './STORE'
@@ -53,6 +54,11 @@ class App extends Component {
           <Route
             path='/create-grocery-list'
             render={() => <CreateGroceryList
+                           store={STORE}/>}
+          />
+          <Route
+            path='/grocery-list'
+            render={() => <GroceryList
                            store={STORE}/>}
           />
         </div>
