@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import './GroceryLists.css'
 import GroceryContext from '../Contexts/GroceryContext'
@@ -32,7 +32,14 @@ export default class GroceryLists extends Component {
         <ul id="grocery__lists">
           {groceryLists.map(groceryList => 
             <li key={groceryList.id}>
-              {groceryList.name}
+                <NavLink
+                aria-controls="groceryList__list"
+                className='groceryList__grocery-link'
+                to={`/grocery-list/${groceryList.id}`}
+              >
+                {groceryList.name}
+              </NavLink>
+              
               
             </li>
           )}
