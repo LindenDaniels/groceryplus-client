@@ -14,26 +14,29 @@ export default class GroceryList extends Component {
     static contextType = GroceryContext;
   
     render() {
-      //const { folderId } = this.props.match.params
+        const { groceryListId } = this.props.match.params
+      const groceryList = Object.keys(groceryListId).map(function(id, name, items) {
+          return (console.log(groceryList));
+      })
+      //
       //const { recipe =[] } = this.context
       //const notesForFolder = getNotesForFolder(notes, folderId)
   
-      const groceryLists = this.props.store.groceryLists
+      //const groceryLists = this.props.store.groceryLists
       return (
-          Object.keys(groceryLists).map(function(id, name, items) {
-              return (
+          // {
+              
         <section className='GroceryLists'>
-          <ul key={id}>
-              <li key={id}>
-                {name}
-                {items}
+          <ul >
+              <li >
+                
               </li>
           </ul>
         </section>
     )
-}))
+}//))
     }
-}
+//}
 
 
   
