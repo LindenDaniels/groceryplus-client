@@ -17,7 +17,8 @@ export default class GroceryList extends Component {
         const findList = (groceryLists=[], groceryListId) =>
   groceryLists.find(groceryList => groceryList.id.toString() === groceryListId)
         const groceryLists = this.props.store.groceryLists
-        const groceryListId = this.props.store.groceryLists.id.toString()
+        const { getGroceryListId } = this.props.match.params;
+        const { groceryListId } = getGroceryListId.toString();
         const list = findList(groceryLists, groceryListId)
         //const groceryListId = this.props.store.groceryLists.id
         //const groceryList = this.props.store.groceryLists.find(groceryList => groceryListId);
