@@ -55,8 +55,7 @@ class App extends Component {
           />
           <Route
             path='/grocery-list/:groceryListId'
-            render={() => <GroceryList
-                           store={STORE}/>}
+            render={(props) => <GroceryList {...props} store={STORE} />}
           
                            
           />
