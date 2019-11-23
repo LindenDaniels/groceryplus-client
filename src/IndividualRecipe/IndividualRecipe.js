@@ -14,32 +14,29 @@ export default class IndividualRecipe extends Component {
     static contextType = GroceryContext;
   
     render() {
-        const findList = (groceryLists=[], groceryListId) =>
-  groceryLists.find(groceryList => groceryList.id.toString() === groceryListId)
-        const groceryLists = this.props.store.groceryLists
+        const findRecipe = (recipes=[], recipeId) =>
+  recipes.find(recipe => recipe.id.toString() === recipeId)
+        //const recipes = this.props.store.groceryLists
         const { recipeId } = this.props.match.params;
         //const { groceryListId } = getGroceryListId.toString();
-        const recipe = findList(this.props.store.recipes, recipeId)
-        console.log("Here's the list", recipe)
-        //const groceryListId = this.props.store.groceryLists.id
-        //const groceryList = this.props.store.groceryLists.find(groceryList => groceryListId);
+        const recipe = findRecipe(this.props.store.recipes, recipeId)
         
-      //const { recipe =[] } = this.context
-      //const notesForFolder = getNotesForFolder(notes, folderId)
-  
-      //const groceryLists = this.props.store.groceryLists
       return (
           
-       
-        <section className='GroceryLists'>
+       <>
+       <header>
+           <h2>{recipe.name}</h2>
+       </header>
+        <section className='recipe'>
           <ul>
-              <li key="{list.id}">
-               {recipe.name}<br />
+              <li key="{recipe.id}">
                {recipe.ingredients}
+               <br />
                {recipe.instructions}
               </li>
           </ul>
         </section>
+        </>
    ) }
 }
 

@@ -7,7 +7,8 @@ import './CreateGroceryList.css';
     
     state = {
         name: "",
-        itemss: "",
+        items: "",
+        id: "",
         formValid: false,
         nameValid: false,
         itemsValid: false,
@@ -18,6 +19,9 @@ updateFormEntry(e) {
         const name = e.target.name;
         const value = e.target.value;
         
+        const id = Math.floor(Math.random() * 100) + 5;
+        
+        
         /*if (e.target.selectedOptions) {
             id = e.target.selectedOptions[0].id;
             this.setState({
@@ -26,6 +30,7 @@ updateFormEntry(e) {
         }*/
         this.setState({
             [e.target.name]: e.target.value,
+            id: id
             
         }, () => {this.validateEntry(name, value)});
     }
@@ -51,6 +56,7 @@ updateFormEntry(e) {
     }
 
     formValid() {
+        
         const { nameValid, itemsValid } = this.state;
         if (nameValid && itemsValid === true){
             this.setState({
@@ -104,15 +110,17 @@ updateFormEntry(e) {
 
     handleSubmit(e) {
         e.preventDefault();
-        const { name, items } = this.state;
+        const { name, items, id } = this.state;
         
         const list = {
             name: name,
-            items: items
+            items: items,
+            id: id
            
         }
         const STORE = this.props.store;
         const groceryLists = this.props.store.groceryLists
+        
         
         groceryLists.push(list);
         this.props.history.push('/grocery-lists');

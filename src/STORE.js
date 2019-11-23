@@ -4,49 +4,49 @@ export default {
           id: '1',
           name: 'Oatmeal',
           ingredients: [ 
-              'Oats',
-              'Blueberries',
-              'Almond Milk'
+              'Oats ',
+              'Blueberries ',
+              'Almond Milk '
            ],
-           instructions: 'Lorem ipsum'
+           instructions: ' Lorem ipsum'
         },
         {
           id: '2',
           name: 'Tacos',
           ingredients: [
-              'Beef', 
-              'Cheese', 
-              'Lettuce'
+              'Beef ', 
+              'Cheese ', 
+              'Lettuce '
           ],
-          instructions: 'Lorem ipsum'
+          instructions: ' Lorem ipsum'
         },
         {
           id: '3',
           name: 'Toast',
           ingredients: [ 
-              'Bread', 
-              'Jelly', 
+              'Bread ', 
+              'Jelly ', 
            ],
-           instructions: 'Lorem ipsum'
+           instructions: ' Lorem ipsum'
         }
         ],
     groceryLists: [ 
         {
         id: '1',
-        name: 'Christmas cooking',
+        name: 'Christmas Cooking',
         items: [
-            'Cookies',
-            'Milk',
-            'Christmas tree'
+            'Cookies ',
+            'Milk ',
+            'Christmas tree '
         ]
     },
     {
         id: '2',
         name: 'Try something new',
         items: [
-            'Ugli fruit',
-            'Durian',
-            'Horned melon'
+            'Ugli fruit ' ,
+            'Durian ',
+            'Horned melon '
         ]
     },
 ]
