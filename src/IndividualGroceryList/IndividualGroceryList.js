@@ -20,19 +20,22 @@ export default class GroceryList extends Component {
         const { getGroceryListId } = this.props.match.params;
         const { groceryListId } = getGroceryListId.toString();
         const list = findList(this.props.store.groceryLists, groceryListId)
+        console.log("Here's the list", list)
         //const groceryListId = this.props.store.groceryLists.id
         //const groceryList = this.props.store.groceryLists.find(groceryList => groceryListId);
-        console.log(list)
+        
       //const { recipe =[] } = this.context
       //const notesForFolder = getNotesForFolder(notes, folderId)
   
       //const groceryLists = this.props.store.groceryLists
       return (
+          
        
         <section className='GroceryLists'>
           <ul>
-              <li>
-                
+              <li key="{list.id}">
+               {list.id.name}
+               {list.id.items}
               </li>
           </ul>
         </section>
