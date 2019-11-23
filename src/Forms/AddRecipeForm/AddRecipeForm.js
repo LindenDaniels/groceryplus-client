@@ -10,6 +10,7 @@ import './AddRecipeForm.css';
         name: "",
         ingredients: "",
         instructions: "",
+        id: "",
         formValid: false,
         nameValid: false,
         ingredientsValid: false,
@@ -20,6 +21,7 @@ import './AddRecipeForm.css';
 updateFormEntry(e) {       
         const name = e.target.name;
         const value = e.target.value;
+        const id = Math.floor(Math.random() * 100) + 5;
         
         /*if (e.target.selectedOptions) {
             id = e.target.selectedOptions[0].id;
@@ -29,6 +31,7 @@ updateFormEntry(e) {
         }*/
         this.setState({
             [e.target.name]: e.target.value,
+            id: id
             
         }, () => {this.validateEntry(name, value)});
     }
@@ -56,7 +59,7 @@ updateFormEntry(e) {
     formValid() {
         const { nameValid, ingredientsValid, instructionsValid } = this.state;
         if (nameValid && ingredientsValid && instructionsValid === true){
-            console.log('form validation')
+            
             this.setState({
                 formValid: true,
                 validationMessage: null
@@ -108,12 +111,13 @@ updateFormEntry(e) {
 
     handleSubmit(e) {
         e.preventDefault();
-        const { name, instructions, ingredients} = this.state;
+        const { name, instructions, ingredients, id} = this.state;
         
         const recipe = {
             name: name,
             instructions: instructions,
             ingredients: ingredients,
+            id: id
            
         }
         const STORE = this.props.store;
