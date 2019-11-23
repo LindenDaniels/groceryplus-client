@@ -14,30 +14,29 @@ export default class GroceryList extends Component {
     static contextType = GroceryContext;
   
     render() {
-        const { groceryListId } = this.props.match.params
-      const groceryList = Object.keys(groceryListId).map(function(id, name, items) {
-          return (console.log(groceryList));
-      })
-      //
+        const findList = (groceryLists=[], groceryListId) =>
+  groceryLists.find(groceryList => groceryList.id.toString() === groceryListId)
+        const groceryLists = this.props.store.groceryLists
+        const groceryListId = this.props.store.groceryLists.id.toString()
+        const list = findList(groceryLists, groceryListId)
+        //const groceryListId = this.props.store.groceryLists.id
+        //const groceryList = this.props.store.groceryLists.find(groceryList => groceryListId);
+        console.log(list)
       //const { recipe =[] } = this.context
       //const notesForFolder = getNotesForFolder(notes, folderId)
   
       //const groceryLists = this.props.store.groceryLists
       return (
-          // {
-              
+       
         <section className='GroceryLists'>
-          <ul >
-              <li >
+          <ul>
+              <li>
                 
               </li>
           </ul>
         </section>
-    )
-}//))
-    }
-//}
-
+   ) }
+}
 
   
   
