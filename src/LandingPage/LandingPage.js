@@ -1,10 +1,11 @@
 import React from 'react';
 import './LandingPage.css';
+import SignUpForm from '../Forms/SignUpForm/SignUpForm';
 export default function LandingPage(props) {
     return (
  
   <>
-    <body>
+    
     
     <section className = "landing">
       <header className="landing-header">
@@ -33,10 +34,11 @@ export default function LandingPage(props) {
         <p>[<em>placeholder for screenshot of recipe adding form</em>]</p>
         <p>Add your own recipe and automatically add the ingredients to your grocery list.</p>
       </section>
+      <SignUpForm />
       
    
     <footer role="content-info">Footer</footer>
-    </body>
+    
     </>
 
   )}

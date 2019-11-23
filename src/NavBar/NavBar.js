@@ -12,6 +12,11 @@ export default class NavBar extends Component {
   
       return (
         <div className='NavBar'>
+            <NavLink
+                className='nav-link'
+                to='/'>
+                    Home
+            </NavLink>
           
             <NavLink
               className='nav-link'
@@ -33,6 +38,7 @@ export default class NavBar extends Component {
                to='/grocery-lists'>
                    Grocery Lists
             </NavLink>
+            
             
           
         </div>
