@@ -54,10 +54,13 @@ class App extends Component {
                            store={STORE}/>}
           />
           <Route
-            path='/grocery-list'
+            path='/grocery-list/:groceryListId'
             render={() => <GroceryList
                            store={STORE}/>}
+          
+                           
           />
+          
         </div>
       </div>
       
