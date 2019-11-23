@@ -8,6 +8,7 @@ import GroceryList from './IndividualGroceryList/IndividualGroceryList';
 import LandingPage from './LandingPage/LandingPage';
 import NavBar from './NavBar/NavBar';
 import STORE  from './STORE'
+import IndividualRecipe from './IndividualRecipe/IndividualRecipe';
 //import config from './config';
 import './App.css';
 
@@ -55,9 +56,11 @@ class App extends Component {
           />
           <Route
             path='/grocery-list/:groceryListId'
-            render={(props) => <GroceryList {...props} store={STORE} />}
-          
-                           
+            render={(props) => <GroceryList {...props} store={STORE} />}               
+          />
+          <Route
+            path='/recipe/:recipeId'
+            render={(props) => <IndividualRecipe {...props} store={STORE} />}               
           />
           
         </div>
