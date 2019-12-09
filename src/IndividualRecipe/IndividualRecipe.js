@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import './IndividualRecipe.css'
-import GroceryContext from '../Contexts/GroceryContext'
+import RecipeContext from '../Contexts/RecipeContext'
 
 export default class IndividualRecipe extends Component {
     static defaultProps = {
@@ -11,14 +11,12 @@ export default class IndividualRecipe extends Component {
       }
     }
   
-    static contextType = GroceryContext;
+    static contextType = RecipeContext;
   
     render() {
         const findRecipe = (recipes=[], recipeId) =>
   recipes.find(recipe => recipe.id.toString() === recipeId)
-        //const recipes = this.props.store.groceryLists
         const { recipeId } = this.props.match.params;
-        //const { groceryListId } = getGroceryListId.toString();
         const recipe = findRecipe(this.props.store.recipes, recipeId)
         
       return (

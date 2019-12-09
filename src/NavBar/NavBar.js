@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
 import { Route, Link, NavLink, withRouter } from 'react-router-dom';
-import GroceryContext from '../Contexts/GroceryContext'
 import AddRecipe from '../Forms/AddRecipeForm/AddRecipeForm';
 
 export default class NavBar extends Component {
-    //static contextType = GroceryContext;
-  
-  
+
     render() {
-      //const { recipes=[] } = this.context
   
       return (
         <div className='NavBar'>
@@ -37,13 +33,10 @@ export default class NavBar extends Component {
                className='nav-link'
                to='/grocery-lists'>
                    Grocery Lists
-            </NavLink>
-            
-            
+            </NavLink> 
           
         </div>
 
       )
     }
-  }//<body>
-    //<nav role="navigation">Nav</nav>
+  }

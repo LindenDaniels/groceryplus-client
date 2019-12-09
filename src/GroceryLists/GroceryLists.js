@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import './GroceryLists.css'
-import GroceryContext from '../Contexts/GroceryContext'
+import ListContext from '../Contexts/ListContext'
 //import Recipe from '../Recipe/Recipe'
 //import { getNotesForFolder } from '../NotesHelpers'
 
@@ -15,29 +15,24 @@ export default class GroceryLists extends Component {
     }
   }
 
-  static contextType = GroceryContext;
-
+  static contextType = ListContext;
   render() {
-    //const { folderId } = this.props.match.params
-    //const { recipe =[] } = this.context
-    //const notesForFolder = getNotesForFolder(notes, folderId)
+    const { list } = this.props;
 
-    const groceryLists = this.props.store.groceryLists
     return (
         <>
         <header>
             <h2>Grocery Lists</h2>
         </header>
       <section className='GroceryLists'>
-        <ul id="grocery__lists">
-          {groceryLists.map(groceryList => 
-            <li key={groceryList.id}>
+        <ul id="grocery__lists"> 
+            <li >
                 <NavLink
                 aria-controls="groceryList__list"
                 className='groceryList__grocery-link'
-                to={`/grocery-list/${groceryList.id}`}
+                to={`/grocery-list/${list.id}`}
               >
-                {groceryList.name}
+                {list.name}
               </NavLink>
               
               

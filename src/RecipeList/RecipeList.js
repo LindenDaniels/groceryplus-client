@@ -2,10 +2,7 @@ import React, { Component } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import './RecipeList.css'
-import GroceryContext from '../Contexts/GroceryContext'
-//import Recipe from '../Recipe/Recipe'
-//import { getNotesForFolder } from '../NotesHelpers'
-
+import ListContext from '../Contexts/ListContext'
 
 
 export default class RecipeList extends Component {
@@ -15,14 +12,11 @@ export default class RecipeList extends Component {
     }
   }
 
-  static contextType = GroceryContext;
+  static contextType = ListContext;
 
   render() {
-    //const { folderId } = this.props.match.params
-    //const { recipe =[] } = this.context
-    //const notesForFolder = getNotesForFolder(notes, folderId)
-
-    const recipes = this.props.store.recipes
+    const { folderId } = this.props.match.params
+    const { recipe =[] } = this.context
     return (
         <>
         <header>
@@ -30,7 +24,6 @@ export default class RecipeList extends Component {
         </header>
       <section className='RecipeList'>
         <ul id="recipe__list">
-          {recipes.map(recipe => 
             <li key={recipe.id}>
                 <NavLink
                 aria-controls="recipe__list"

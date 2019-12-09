@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import './IndividualGroceryList.css'
-import GroceryContext from '../Contexts/GroceryContext'
+import ListContext from '../Contexts/ListContext'
 
 export default class GroceryList extends Component {
     static defaultProps = {
@@ -11,7 +11,7 @@ export default class GroceryList extends Component {
       }
     }
   
-    static contextType = GroceryContext;
+    static contextType = ListContext;
   
     render() {
        

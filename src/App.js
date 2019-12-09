@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
-import { Route, Link, withRouter} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import AddRecipe from './Forms/AddRecipeForm/AddRecipeForm';
 import CreateGroceryList from './Forms/CreateGroceryList/CreateGroceryList';
-import RecipeList from './RecipeList/RecipeList';
 import GroceryLists from './GroceryLists/GroceryLists';
 import GroceryList from './IndividualGroceryList/IndividualGroceryList';
 import LandingPage from './LandingPage/LandingPage';
 import NavBar from './NavBar/NavBar';
-import STORE  from './STORE'
 import IndividualRecipe from './IndividualRecipe/IndividualRecipe';
 //import config from './config';
 import './App.css';
 
 class App extends Component {
-  static defaultProps = {
-    store: {
+  constructor(props) {
+    super(props);
+    this.state = {
       recipes: [],
-    }
-  };
+      folders: [],
+      lists: [],
+      errorBoundaryKey: 0
+    };
+  }
   render() {
     
     return (
@@ -29,9 +31,7 @@ class App extends Component {
         <div className='content' aria-live='polite'>
           <Route
             path='/add-recipe'
-            render={() => <AddRecipe
-                           store={STORE}
-            />}
+            render={() => <AddRecipe/>}
           />
           <Route
             exact
@@ -39,33 +39,28 @@ class App extends Component {
             render={() => <LandingPage 
           />}
           />
+      
           <Route
-            path='/recipe-list'
-            render={() => <RecipeList
-                           store={STORE}/>}
-          />
-          <Route
-            path='/grocery-lists'
+            path='/lists'
             render={() => <GroceryLists
-                           store={STORE}/>}
+                         />}
           />
           <Route
             path='/create-grocery-list'
             render={() => <CreateGroceryList
-                           store={STORE}/>}
+                           />}
           />
           <Route
             path='/grocery-list/:groceryListId'
-            render={(props) => <GroceryList {...props} store={STORE} />}               
+            render={(props) => <GroceryList {...props} />}               
           />
           <Route
             path='/recipe/:recipeId'
-            render={(props) => <IndividualRecipe {...props} store={STORE} />}               
+            render={(props) => <IndividualRecipe {...props}  />}               
           />
           
         </div>
       </div>
-      
     );
   }
 }
