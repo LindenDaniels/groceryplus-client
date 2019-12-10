@@ -17,7 +17,7 @@ export default class GroceryLists extends Component {
 
   static contextType = ListContext;
   render() {
-    const { list } = this.props;
+    const { id } = this.props;
 
     return (
         <>
@@ -30,9 +30,9 @@ export default class GroceryLists extends Component {
                 <NavLink
                 aria-controls="groceryList__list"
                 className='groceryList__grocery-link'
-                to={`/grocery-list/${list.id}`}
+                to={`/list/${id}`}
               >
-                {list.name}
+                {name}
               </NavLink>
               
               
