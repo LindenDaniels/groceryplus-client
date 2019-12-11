@@ -9,7 +9,7 @@ import NavBar from './NavBar/NavBar';
 import IndividualRecipe from './IndividualRecipe/IndividualRecipe';
 //import config from './config';
 import './App.css';
-import ListProvider from './Contexts/ListContext';
+import { ListProvider } from './Contexts/ListContext';
 
 class App extends Component {
   constructor(props) {
