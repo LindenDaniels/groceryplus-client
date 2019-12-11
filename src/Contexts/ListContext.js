@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 const ListContext = React.createContext({
-  List: [],
+  list: [],
   error: null,
   setError: () => {},
   clearError: () => {},
@@ -16,8 +16,10 @@ export class ListProvider extends Component {
   };
 
   setList = list => {
+    console.log(this)
+    console.log(list)
     this.setState({ list })
-  }
+      }
 
   setError = error => {
     console.error(error)

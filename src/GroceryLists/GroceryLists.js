@@ -18,9 +18,13 @@ export default class GroceryLists extends Component {
   static contextType = ListContext;
 
   componentDidMount() {
-    this.context.clearError()
+   
     ListService.getLists()
-      .then(this.context.setList)
+      //.then(this.context.setList)
+      .then(responseJson => {
+        console.log("hopefully this gets logged");
+        console.log(responseJson);
+    })
       .catch(this.context.setError)
   }
   render() {
@@ -31,10 +35,10 @@ export default class GroceryLists extends Component {
                 <GroceryList
                 id={list.id}
                 name={list.name}
-                items={list.items}
                 aria-controls="groceryList__list"
                 className='groceryList__grocery-link'
-                />
+                />,
+                //console.log(list.id, list.name, list)
                 
     )
     )}

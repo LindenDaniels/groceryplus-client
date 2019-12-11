@@ -9,6 +9,7 @@ import NavBar from './NavBar/NavBar';
 import IndividualRecipe from './IndividualRecipe/IndividualRecipe';
 //import config from './config';
 import './App.css';
+import ListContext from './Contexts/ListContext';
 
 class App extends Component {
   constructor(props) {
@@ -21,8 +22,15 @@ class App extends Component {
     };
   }
   render() {
+    const contextValue = {
+      lists: this.state.notes,
+      folders: this.state.folders,
+      recipes: this.state.recipes
+
+    };
     
     return (
+      <ListContext.Provider value={contextValue}>
       
       <div className='App'>
         <NavBar
@@ -61,6 +69,7 @@ class App extends Component {
           
         </div>
       </div>
+      </ListContext.Provider>
     );
   }
 }
