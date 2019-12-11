@@ -13,31 +13,30 @@ import ListService from '../Services/ListService';
 
 export default class GroceryLists extends Component {
   
- 
-
   static contextType = ListContext;
-
+  
+  
   componentDidMount() {
-   
+    
     ListService.getLists()
-      //.then(this.context.setList)
-      .then(responseJson => {
-        console.log("hopefully this gets logged");
-        console.log(responseJson);
-    })
+      .then(this.context.setList)
+      
+    
       .catch(this.context.setError)
   }
   render() {
     const { list = [] } = this.context;
-
+    
+  
     return ( 
-      list.map(list =>
-                <GroceryList
+      list.map(grocery_list =>
+        console.log(grocery_list)
+                /*<GroceryList
                 id={list.id}
                 name={list.name}
                 aria-controls="groceryList__list"
                 className='groceryList__grocery-link'
-                />,
+                />,*/
                 //console.log(list.id, list.name, list)
                 
     )

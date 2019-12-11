@@ -6,12 +6,11 @@ const ListService = {
       headers: {
       },
     })
-      .then(res => {
-        console.log("lists response:", res);
-       return (!res.ok)
+      .then(res => 
+         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-      })
+      )
   },
   getList(listId) {
     return fetch(`${config.API_ENDPOINT}/lists/${listId}`, {
