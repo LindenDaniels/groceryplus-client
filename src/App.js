@@ -9,7 +9,7 @@ import NavBar from './NavBar/NavBar';
 import IndividualRecipe from './IndividualRecipe/IndividualRecipe';
 //import config from './config';
 import './App.css';
-import ListContext from './Contexts/ListContext';
+import ListProvider from './Contexts/ListContext';
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class App extends Component {
     };
     
     return (
-      <ListContext.Provider value={contextValue}>
+      <ListProvider value={contextValue}>
       
       <div className='App'>
         <NavBar
@@ -69,7 +69,7 @@ class App extends Component {
           
         </div>
       </div>
-      </ListContext.Provider>
+      </ListProvider>
     );
   }
 }
