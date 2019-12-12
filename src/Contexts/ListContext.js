@@ -29,7 +29,7 @@ export class ListProvider extends Component {
   }
 
   render() {
-    const value = {
+    const contextValue = {
       lists: this.state.lists,
       error: this.state.error,
       setError: this.setError,
@@ -37,7 +37,7 @@ export class ListProvider extends Component {
       setList: this.setList,
     }
     return (
-      <ListContext.Provider value={value}>
+      <ListContext.Provider value={contextValue}>
         {this.props.children}
       </ListContext.Provider>
     )

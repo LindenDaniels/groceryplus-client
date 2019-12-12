@@ -12,7 +12,7 @@ export default class GroceryList extends Component {
   
   componentDidMount() {
     const { lists = [] } = this.props
-    const listId = list.id;
+    const listId = lists.id;
     ListService.getList(listId)
       .then(this.context.setList)
       .catch(this.context.setError)

@@ -12,6 +12,7 @@ export default class GroceryLists extends Component {
   static contextType = ListContext;
   
   componentDidMount() {
+    const { lists = [] } = this.context
     
     ListService.getLists()
       .then(this.context.setList)
@@ -22,6 +23,7 @@ export default class GroceryLists extends Component {
     
   
     return ( 
+      
       lists.map(grocery_list =>
                 <GroceryList
                 id={grocery_list.id}
@@ -29,6 +31,7 @@ export default class GroceryLists extends Component {
                 aria-controls="groceryList__list"
                 className='groceryList__grocery-link'
                 />,
+               
                 
     )
     )}

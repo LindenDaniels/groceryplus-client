@@ -23,7 +23,7 @@ class App extends Component {
   }
   render() {
     const contextValue = {
-      lists: this.state.notes,
+      lists: this.state.lists,
       folders: this.state.folders,
       recipes: this.state.recipes
 
