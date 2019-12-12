@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 const ListContext = React.createContext({
   list: [],
+  listId: '',
   error: null,
   setError: () => {},
   clearError: () => {},
@@ -12,12 +13,11 @@ export default ListContext
 export class ListProvider extends Component {
   state = {
     list: [],
+    listId: '',
     error: null,
   };
 
   setList = list => {
-    console.log(this)
-    console.log(list)
     this.setState({ list })
       }
 
@@ -33,6 +33,7 @@ export class ListProvider extends Component {
   render() {
     const value = {
       list: this.state.list,
+      listId: this.state.listId,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
