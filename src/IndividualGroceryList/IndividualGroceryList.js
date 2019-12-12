@@ -10,19 +10,17 @@ export default class GroceryList extends Component {
   static contextType = ListContext;
   
   
-  /*componentDidMount() {
-    const listId = this.context;
-    console.log(listId)
+  componentDidMount() {
+    const { list = [] } = this.props
+    const listId = list.id;
     ListService.getList(listId)
       .then(this.context.setList)
       .catch(this.context.setError)
-  }*/
+  }
   
   render() {
-    const { list = [] } = this.context;
-    
+    const { list = [] } = this.props
     return ( 
-      <Link to={`/lists/${list.id}`} className='individual-list'>
        <>
        <header>
            <h2>{list.name}</h2>
@@ -35,7 +33,7 @@ export default class GroceryList extends Component {
           </ul>
         </section>
         </>
-        </Link>
+        
    ) }
 }
 
