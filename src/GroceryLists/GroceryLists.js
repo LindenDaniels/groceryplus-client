@@ -24,8 +24,8 @@ export default class GroceryLists extends Component {
     return ( 
       list.map(grocery_list =>
                 <GroceryList
-                id={list.id}
-                name={list.name}
+                id={grocery_list.id}
+                name={grocery_list.name}
                 aria-controls="groceryList__list"
                 className='groceryList__grocery-link'
                 />,
