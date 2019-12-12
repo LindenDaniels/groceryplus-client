@@ -11,7 +11,7 @@ export default class GroceryList extends Component {
   
   
   componentDidMount() {
-    const { list = [] } = this.props
+    const { lists = [] } = this.props
     const listId = list.id;
     ListService.getList(listId)
       .then(this.context.setList)
@@ -19,16 +19,16 @@ export default class GroceryList extends Component {
   }
   
   render() {
-    const { list = [] } = this.props
+    const { lists = [] } = this.props
     return ( 
        <>
        <header>
-           <h2>{list.name}</h2>
+           <h2>{lists.name}</h2>
        </header>
         <section className='GroceryLists'> 
           <ul>
               <li key="{list.id}" className='groceryList-items'>
-               {list.items}
+               {lists.items}
               </li>
           </ul>
         </section>

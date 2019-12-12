@@ -18,11 +18,11 @@ export default class GroceryLists extends Component {
       .catch(this.context.setError)
   }
   render() {
-    const { list = [] } = this.context;
+    const { lists = [] } = this.context;
     
   
     return ( 
-      list.map(grocery_list =>
+      lists.map(grocery_list =>
                 <GroceryList
                 id={grocery_list.id}
                 name={grocery_list.name}

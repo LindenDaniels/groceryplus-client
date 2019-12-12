@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 const ListContext = React.createContext({
-  list: [],
+  lists: [],
   error: null,
   setError: () => {},
   clearError: () => {},
@@ -11,12 +11,12 @@ export default ListContext
 
 export class ListProvider extends Component {
   state = {
-    list: [],
+    lists: [],
     error: null,
   };
 
-  setList = list => {
-    this.setState({ list })
+  setList = lists => {
+    this.setState({ lists })
       }
 
   setError = error => {
@@ -30,7 +30,7 @@ export class ListProvider extends Component {
 
   render() {
     const value = {
-      list: this.state.list,
+      lists: this.state.lists,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
