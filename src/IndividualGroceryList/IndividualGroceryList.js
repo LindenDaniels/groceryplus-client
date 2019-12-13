@@ -14,8 +14,10 @@ export default class GroceryList extends Component {
     const { lists = [] } = this.props
     const listId = lists.id;
     ListService.getList(listId)
+    
       .then(this.context.setList)
       .catch(this.context.setError)
+      console.log(lists, lists.id)
   }
   
   render() {
@@ -27,7 +29,7 @@ export default class GroceryList extends Component {
        </header>
         <section className='GroceryLists'> 
           <ul>
-              <li key="{list.id}" className='groceryList-items'>
+              <li key={lists.id} className='groceryList-items'>
                {lists.items}
               </li>
           </ul>
