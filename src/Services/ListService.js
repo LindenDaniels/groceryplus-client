@@ -1,6 +1,7 @@
 import config from '../config'
 
 const ListService = {
+  
   getLists() {
     return fetch(`${config.API_ENDPOINT}/lists`, {
       headers: {
@@ -12,8 +13,10 @@ const ListService = {
           : res.json()
       )
   },
-  getList(listId) {
-    return fetch(`${config.API_ENDPOINT}/lists/${listId}`, {
+  
+  getList(list_id) {
+    
+    return fetch(`${config.API_ENDPOINT}/lists/${list_id}`, {
       headers: {
       },
     })
