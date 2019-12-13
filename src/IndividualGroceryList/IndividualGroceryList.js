@@ -17,7 +17,7 @@ export default class GroceryList extends Component {
     
       .then(this.context.setList)
       .catch(this.context.setError)
-      console.log(lists, lists.id)
+      
   }
   
   render() {

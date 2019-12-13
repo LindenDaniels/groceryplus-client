@@ -20,19 +20,21 @@ export default class GroceryLists extends Component {
   }
   render() {
     const { lists = [] } = this.context;
+    console.log(lists)
     
   
     return ( 
       
-      lists.map(grocery_list =>
+      //lists.map(grocery_list =>
                 <GroceryList
-                id={grocery_list.id}
-                name={grocery_list.name}
+                id={lists.id}
+                name={lists.name}
                 aria-controls="groceryList__list"
                 className='groceryList__grocery-link'
-                />,
+                />
                
                 
-    )
-    )}
+    //)
+    )} 
+  
 }
