@@ -12,34 +12,26 @@ export default class GroceryLists extends Component {
   static contextType = ListContext;
   
   componentDidMount() {
-    const { lists = [] } = this.props
-    const list_id = this.context;
-    
-    
+  
     ListService.getLists()
       .then(this.context.setList)
-      .catch(this.context.setError)
-      
+      .catch(this.context.setError) 
   }
   
   render() {
     const { lists = [] } = this.context;
    
-    
-    
-  
     return ( 
       
-      //lists.map(grocery_list =>
+      lists.map(list =>
                 <GroceryList
-                id={lists.id}
-                name={lists.name}
+                key={list.id}
+                name={list.name}
                 aria-controls="groceryList__list"
                 className='groceryList__grocery-link'
-                />
-               
+                />        
                 
-    //)
+    )
     )} 
   
 }

@@ -11,9 +11,10 @@ export default class GroceryList extends Component {
   
   
   componentDidMount() {
-    const { lists = [] } = this.props
-    const list_id = this.context.lists.id;
-    console.log(list_id)
+   
+    const { lists } = this.context
+    const list_id = lists.id
+    
     
    
     ListService.getList(list_id)
@@ -24,7 +25,8 @@ export default class GroceryList extends Component {
   
   render() {
     const { lists = [] } = this.context
-    return ( 
+    return (
+      <Link to={`/lists/${lists.id}`} className='ThingListItem'> 
        <>
        <header>
            <h2>{lists.name}</h2>
@@ -37,6 +39,7 @@ export default class GroceryList extends Component {
           </ul>
         </section>
         </>
+        </Link>
         
    ) }
 }

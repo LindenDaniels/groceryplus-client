@@ -30,46 +30,47 @@ class App extends Component {
     };
     
     return (
-      <ListProvider value={contextValue}>
+        <Switch>
       
       <div className='App'>
         <NavBar
          className = 'nav-bar' />
+
+          <Route
+            exact 
+            path={'/'}
+            component={LandingPage}
+          />
     
         <div className='content' aria-live='polite'>
           <Route
             path='/add-recipe'
-            render={() => <AddRecipe/>}
+            component={AddRecipe}
           />
-          <Route
-            exact
-            path='/'
-            render={() => <LandingPage 
-          />}
-          />
+          
       
           <Route
             path='/lists'
-            render={() => <GroceryLists
-                         />}
+            component={GroceryLists}
+                         
           />
           <Route
             path='/create-grocery-list'
-            render={() => <CreateGroceryList
-                           />}
+            component={CreateGroceryList}
           />
           <Route
-            path='/list/:listId'
-            render={(props) => <GroceryList {...props} />}               
+            path='/lists/:list_id'
+            component={GroceryList}               
           />
           <Route
             path='/recipe/:recipeId'
-            render={(props) => <IndividualRecipe {...props}  />}               
+            component={IndividualRecipe}               
           />
           
         </div>
       </div>
-      </ListProvider>
+      </Switch>
+      
     );
   }
 }
