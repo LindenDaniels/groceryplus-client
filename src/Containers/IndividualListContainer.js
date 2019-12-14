@@ -4,6 +4,7 @@ import ListService from '../Services/ListService'
 import ListContext from '../Contexts/ListContext'
 
 class ContainerIndividualGroceryList extends React.Component {
+    static contextType = ListContext;
     
     componentDidMount() {
       ListService.getList(this.props.match.params.listId)
