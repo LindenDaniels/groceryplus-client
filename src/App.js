@@ -62,8 +62,8 @@ class App extends Component {
           />
           <Route
             path='/lists/:list_id'
-            render={ContainerIndividualGroceryList}
-            //component={ContainerIndividualGroceryList}               
+            //render={ContainerIndividualGroceryList}
+            component={ContainerIndividualGroceryList}               
           />
           <Route
             path='/recipe/:recipeId'
