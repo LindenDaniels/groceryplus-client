@@ -12,7 +12,7 @@ class ContainerIndividualGroceryList extends React.Component {
     }
   
     render() {
-      const list = this.context.lists.find(list => +list.id === +this.props.match.params.listId)
+      const list = this.context.lists.find(list => +list.id === +this.props.match.params.list_id)
       return <GroceryList {...list} />
     }
   }
