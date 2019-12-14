@@ -7,8 +7,8 @@ class ContainerIndividualGroceryList extends React.Component {
     static contextType = ListContext;
     
     componentDidMount() {
-      ListService.getList(this.props.match.params.listId)
-        .then(this.context.setList)
+      ListService.getList(this.props.match.params.list_id)
+        .then(list => this.context.setList([list]))
         .catch(this.context.setError)
     }
   

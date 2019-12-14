@@ -11,17 +11,18 @@ export default class GroceryList extends Component {
   
   
   render() {
-    const { lists = [] } = this.context
+    const { name, id, items } = this.props
+    
     return (
-      <Link to={`/lists/${lists.id}`} className='ThingListItem'> 
+      <Link to={`/lists/${id}`} className='list-item'> 
        <>
        <header>
-           <h2>{lists.name}</h2>
+           <h2>{name}</h2>
        </header>
         <section className='GroceryLists'> 
           <ul>
-              <li key={lists.id} className='groceryList-items'>
-               {lists.items}
+              <li key={id} className='groceryList-items'>
+               {items}
               </li>
           </ul>
         </section>
