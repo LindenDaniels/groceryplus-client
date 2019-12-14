@@ -62,7 +62,7 @@ class App extends Component {
           />
           <Route
             path='/lists/:list_id'
-            render={(props) => <ContainerIndividualGroceryList {...props} listId={this.state.lists.id} />}
+            render={(props) => <ContainerIndividualGroceryList {...props} list_id={this.state.lists.id} />}
             //component={ContainerIndividualGroceryList}               
           />
           <Route
