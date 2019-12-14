@@ -10,19 +10,6 @@ export default class GroceryList extends Component {
   static contextType = ListContext;
   
   
-  componentDidMount() {
-   
-    const { lists } = this.context
-    const list_id = lists.id
-    
-    
-   
-    ListService.getList(list_id)
-      .then(this.context.setList)
-      .catch(this.context.setError)
-    
-  }
-  
   render() {
     const { lists = [] } = this.context
     return (

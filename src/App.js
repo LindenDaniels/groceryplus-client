@@ -4,12 +4,14 @@ import AddRecipe from './Forms/AddRecipeForm/AddRecipeForm';
 import CreateGroceryList from './Forms/CreateGroceryList/CreateGroceryList';
 import GroceryLists from './GroceryLists/GroceryLists';
 import GroceryList from './IndividualGroceryList/IndividualGroceryList';
+import ContainerIndividualGroceryList from './Containers/IndividualListContainer'
 import LandingPage from './LandingPage/LandingPage';
 import NavBar from './NavBar/NavBar';
 import IndividualRecipe from './IndividualRecipe/IndividualRecipe';
 //import config from './config';
 import './App.css';
 import { ListProvider } from './Contexts/ListContext';
+
 
 class App extends Component {
   constructor(props) {
@@ -60,7 +62,8 @@ class App extends Component {
           />
           <Route
             path='/lists/:list_id'
-            component={GroceryList}               
+            render={(props) => <ContainerIndividualGroceryList {...props} listId={this.state.lists.id} />}
+            //component={ContainerIndividualGroceryList}               
           />
           <Route
             path='/recipe/:recipeId'
