@@ -3,7 +3,7 @@ import config from '../config'
 const FolderService = {
   
   getFolders() {
-    return fetch(`${config.API_ENDPOINT}/recipes`, {
+    return fetch(`${config.API_ENDPOINT}/folders`, {
       headers: {
       },
     })
@@ -16,7 +16,7 @@ const FolderService = {
   
   getFolder(folder_id) {
     
-    return fetch(`${config.API_ENDPOINT}/recipes/${folder_id}`, {
+    return fetch(`${config.API_ENDPOINT}/folders/${folder_id}`, {
       headers: {
       },
     })

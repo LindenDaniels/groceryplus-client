@@ -6,6 +6,7 @@
     "nodemon": "^2.0.1",
     "now": "^16.6.3",
     "proptypes": "^1.1.0",
+    "psql": "0.0.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",

@@ -15,8 +15,8 @@ export class FolderProvider extends Component {
     error: null,
   };
 
-  setFolder = folder => {
-    this.setState({ folder })
+  setFolder = folders => {
+    this.setState({ folders })
   }
 
   setError = error => {

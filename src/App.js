@@ -71,7 +71,7 @@ class App extends Component {
 
           <Route
             path='/recipes'
-            component={FolderList}
+            component={IndividualFolderContainer}
             />
           
         </div>
