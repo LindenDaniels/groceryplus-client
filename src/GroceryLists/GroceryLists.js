@@ -5,8 +5,6 @@ import './GroceryLists.css'
 import ListContext from '../Contexts/ListContext'
 import GroceryList  from '../IndividualGroceryList/IndividualGroceryList'
 import ListService from '../Services/ListService';
-import ContainerIndividualGroceryList from '../Containers/IndividualListContainer'
-
 
 export default class GroceryLists extends Component {
   

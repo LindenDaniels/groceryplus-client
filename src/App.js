@@ -3,14 +3,14 @@ import { Route, Switch } from 'react-router-dom';
 import AddRecipe from './Forms/AddRecipeForm/AddRecipeForm';
 import CreateGroceryList from './Forms/CreateGroceryList/CreateGroceryList';
 import GroceryLists from './GroceryLists/GroceryLists';
-import GroceryList from './IndividualGroceryList/IndividualGroceryList';
+import FolderList from './FolderList/FolderList';
 import ContainerIndividualGroceryList from './Containers/IndividualListContainer'
 import LandingPage from './LandingPage/LandingPage';
 import NavBar from './NavBar/NavBar';
 import IndividualRecipe from './IndividualRecipe/IndividualRecipe';
-//import config from './config';
 import './App.css';
 import { ListProvider } from './Contexts/ListContext';
+import IndividualFolderContainer from './Containers/IndividualFolderContainer';
 
 
 class App extends Component {
@@ -62,13 +62,17 @@ class App extends Component {
           />
           <Route
             path='/lists/:list_id'
-            //render={ContainerIndividualGroceryList}
             component={ContainerIndividualGroceryList}               
           />
           <Route
-            path='/recipe/:recipeId'
+            path='/recipes/:recipe_id'
             component={IndividualRecipe}               
           />
+
+          <Route
+            path='/recipes'
+            component={FolderList}
+            />
           
         </div>
       </div>

@@ -13,8 +13,7 @@ const RecipeContext = React.createContext({
   clearError: () => { },
   setRecipe: () => {},
   clearRecipe: () => {},
-  setReviews: () => {},
-  addReview: () => {},
+  addRecipe: () => {},
 })
 
 export default RecipeContext
@@ -34,8 +33,8 @@ export class RecipeProvider extends Component {
     this.setState({ error: null })
   }
 
-  setRecipe = Recipe => {
-    this.setState({ Recipe })
+  setRecipe = recipe => {
+    this.setState({ recipe })
   }
 
   clearRecipe = () => {

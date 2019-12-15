@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 const FolderContext = React.createContext({
-  Folder: [],
+  folders: [],
   error: null,
   setError: () => {},
   clearError: () => {},
@@ -11,12 +11,12 @@ export default FolderContext
 
 export class FolderProvider extends Component {
   state = {
-    Folder: [],
+    folders: [],
     error: null,
   };
 
-  setFolder = Folder => {
-    this.setState({ Folder })
+  setFolder = folder => {
+    this.setState({ folder })
   }
 
   setError = error => {
@@ -29,15 +29,15 @@ export class FolderProvider extends Component {
   }
 
   render() {
-    const value = {
-      folder: this.state.folder,
+    const contextValue = {
+      folders: this.state.folders,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
       setFolder: this.setFolder,
     }
     return (
-      <FolderContext.Provider value={value}>
+      <FolderContext.Provider value={contextValue}>
         {this.props.children}
       </FolderContext.Provider>
     )
