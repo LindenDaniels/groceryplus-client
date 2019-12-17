@@ -10,10 +10,6 @@ class RecipesInFolder extends React.Component {
     static contextType = RecipeContext;
     
     componentDidMount() {
-      FolderService.getFolder(this.props.match.params.folder_id)
-        .then(folder => this.context.setFolder([folder]))
-        .catch(this.context.setError)
-
         RecipeService.getRecipes(this.props.match.params.folder_id)
         .catch(this.context.setError)
     }
