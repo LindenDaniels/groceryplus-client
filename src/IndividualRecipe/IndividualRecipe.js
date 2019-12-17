@@ -3,43 +3,38 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import './IndividualRecipe.css'
 import RecipeContext from '../Contexts/RecipeContext'
+import RecipeService from '../Services/RecipeService'
 
-export default class IndividualRecipe extends Component {
-    static defaultProps = {
-      match: {
-        params: {}
-      }
-    }
+export default class GroceryRecipe extends Component {
+ 
+  static contextType = RecipeContext;
   
-    static contextType = RecipeContext;
   
-    render() {
-        const findRecipe = (recipes=[], recipeId) =>
-  recipes.find(recipe => recipe.id.toString() === recipeId)
-        const { recipeId } = this.props.match.params;
-        const recipe = findRecipe(this.props.store.recipes, recipeId)
-        
-      return (
-          
+  render() {
+    const { name, id, ingredients, instructions } = this.props
+    
+    return (
+      <Link to={`/recipes/${id}`} className='recipe-name'> 
        <>
        <header>
-           <h2>{recipe.name}</h2>
+           <h2>{name}</h2>
        </header>
-        <section className='recipe'>
+        <section className='recipes'> 
           <ul>
-              <li key="{recipe.id}">
-               {recipe.ingredients}
-               <br />
-               {recipe.instructions}
+              <li key={id} className='recipe-items'>
+               {ingredients}
+               {instructions}
               </li>
           </ul>
         </section>
         </>
+        </Link>
+        
    ) }
 }
 
   
   
-  IndividualRecipe.propType = {
+  GroceryRecipe.propType = {
     match: PropTypes.object.isRequired
   };

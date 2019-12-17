@@ -7,10 +7,10 @@ import FolderList from './FolderList/FolderList';
 import ContainerIndividualGroceryList from './Containers/IndividualListContainer'
 import LandingPage from './LandingPage/LandingPage';
 import NavBar from './NavBar/NavBar';
-import IndividualRecipe from './IndividualRecipe/IndividualRecipe';
+import RecipeList from './RecipeList/RecipeList';
 import './App.css';
 import { ListProvider } from './Contexts/ListContext';
-import IndividualFolderContainer from './Containers/IndividualFolderContainer';
+import IndividualRecipeContainer from './Containers/IndividualRecipeContainer';
 
 
 class App extends Component {
@@ -65,11 +65,16 @@ class App extends Component {
             component={ContainerIndividualGroceryList}               
           />
           <Route
-            path='/recipes/:recipe_id'
-            component={IndividualRecipe}               
+            path='/recipes/:folder_id'
+            component={RecipeList}               
           />
+          <Route
+            path='/recipes/:folder_id/:recipe_id'
+            component={IndividualRecipeContainer}
+            />
 
           <Route
+            exact
             path='/recipes'
             component={FolderList}
             />

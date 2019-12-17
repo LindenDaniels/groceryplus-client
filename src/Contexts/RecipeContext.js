@@ -1,28 +1,23 @@
 import React, { Component } from 'react'
 
-export const nullRecipe = {
-  author: {},
-  tags: [],
-}
-
 const RecipeContext = React.createContext({
-  Recipe: nullRecipe,
-  reviews: [],
+  recipes: [],
   error: null,
   setError: () => {},
-  clearError: () => { },
+  clearError: () => {},
   setRecipe: () => {},
-  clearRecipe: () => {},
-  addRecipe: () => {},
 })
-
 export default RecipeContext
 
 export class RecipeProvider extends Component {
   state = {
-    Recipe: nullRecipe,
+    recipes: [],
     error: null,
   };
+
+  setRecipe = recipes => {
+    this.setState({ recipes })
+  }
 
   setError = error => {
     console.error(error)
@@ -33,26 +28,16 @@ export class RecipeProvider extends Component {
     this.setState({ error: null })
   }
 
-  setRecipe = recipe => {
-    this.setState({ recipe })
-  }
-
-  clearRecipe = () => {
-    this.setRecipe(nullRecipe)
-    this.setReviews([])
-  }
-
   render() {
-    const value = {
-      recipe: this.state.recipe,
+    const contextValue = {
+      recipes: this.state.recipes,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
       setRecipe: this.setRecipe,
-      clearRecipe: this.clearRecipe,
     }
     return (
-      <RecipeContext.Provider value={value}>
+      <RecipeContext.Provider value={contextValue}>
         {this.props.children}
       </RecipeContext.Provider>
     )

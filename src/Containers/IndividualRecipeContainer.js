@@ -3,7 +3,7 @@ import IndividualRecipe from '../IndividualRecipe/IndividualRecipe'
 import RecipeService from '../Services/RecipeService'
 import RecipeContext from '../Contexts/RecipeContext'
 
-class ContainerIndividualGroceryRecipe extends React.Component {
+class IndividualRecipeContainer extends React.Component {
     static contextType = RecipeContext;
     
     componentDidMount() {
@@ -18,4 +18,4 @@ class ContainerIndividualGroceryRecipe extends React.Component {
     }
   }
 
-  export default ContainerIndividualGroceryRecipe;
+  export default IndividualRecipeContainer;

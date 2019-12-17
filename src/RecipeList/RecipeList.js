@@ -1,50 +1,42 @@
 import React, { Component } from 'react'
-import { NavLink, Link } from 'react-router-dom'
-import PropTypes from 'prop-types';
 import './RecipeList.css'
-import ListContext from '../Contexts/ListContext'
-
+import RecipeContext from '../Contexts/RecipeContext'
+import IndividualRecipe  from '../IndividualRecipe/IndividualRecipe'
+import RecipeService from '../Services/RecipeService';
+import FolderService from '../Services/FolderService';
 
 export default class RecipeList extends Component {
-  static defaultProps = {
-    match: {
-      params: {}
-    }
+  
+  static contextType = RecipeContext;
+  
+  componentDidMount() {
+    FolderService.getFolders()
+    .then(this.context.setFolder)
+    .catch(this.context.setError) 
+  
+    RecipeService.getRecipes()
+      .then(this.context.setRecipe)
+      .catch(this.context.setError) 
   }
-
-  static contextType = ListContext;
-
+  
   render() {
-    const { folderId } = this.props.match.params
-    const { recipe =[] } = this.context
-    return (
-        <>
-        <header>
-            <h1>Recipe List</h1>
-        </header>
-      <section className='RecipeList'>
-        <ul id="recipe__list">
-            <li key={recipe.id}>
-                <NavLink
-                aria-controls="recipe__list"
-                className='recipe__recipe-link'
-                to={`/recipe/${recipe.id}`}
-              >
-                {recipe.name}
-              </NavLink>
-              
-              
-            </li>
-          )}
-        </ul>
-      </section>
-      </>
+    const { recipes = [], folders = [] } = this.context;
+   
+    return ( 
+      
+      recipes.map(recipe =>
+                <IndividualRecipe
+                folder_id={folders.id}
+                id={recipe.id}
+                key={recipe.id}
+                name={recipe.name}
+                //ingredients={recipe.ingredients}
+                //instructions={recipe.instructions}
+                aria-controls="groceryRecipe__recipe"
+                className='groceryRecipe__grocery-link'
+                />        
+                
     )
-  }
-
+    )} 
+  
 }
-
-
-RecipeList.propType = {
-  match: PropTypes.object.isRequired
-};
