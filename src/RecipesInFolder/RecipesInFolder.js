@@ -19,8 +19,7 @@ class RecipesInFolder extends React.Component {
     }
   
     render() {
-      const folder = this.context.folders.find(folder => +folder.id === +this.props.match.params.folder_id)
-      const recipe = this.context.recipes.find(folder => +folder.id === +this.props.match.params.folder_id )
+      const recipes = this.context.recipes.filter(recipe => +recipe.folder_id === +this.props.match.params.folder_id )
       return <DisplayRecipesInFolder {...folder} {...recipe} />
     }
   }
