@@ -32,57 +32,29 @@ class App extends Component {
     };
     
     return (
-        <Switch>
-      
-      <div className='App'>
-        <NavBar
-         className = 'nav-bar' />
+      <div className="App">
+        <NavBar className="nav-bar" />
 
-          <Route
-            exact 
-            path={'/'}
-            component={LandingPage}
-          />
-    
-        <div className='content' aria-live='polite'>
-          <Route
-            path='/add-recipe'
-            component={AddRecipe}
-          />
-          
-      
-          <Route
-            path='/lists'
-            component={GroceryLists}
-                         
-          />
-          <Route
-            path='/create-grocery-list'
-            component={CreateGroceryList}
-          />
-          <Route
-            path='/lists/:list_id'
-            component={ContainerIndividualGroceryList}               
-          />
-          <Route
-            path='/recipes/:folder_id'
-            component={RecipeList}               
-          />
-          <Route
-            path='/recipes/:folder_id/:recipe_id'
-            component={IndividualRecipeContainer}
-            />
+        <div className="content" aria-live="polite">
+          <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/add-recipe" component={AddRecipe} />
 
-          <Route
-            exact
-            path='/recipes'
-            component={FolderList}
+            <Route path="/lists" component={GroceryLists} />
+            <Route path="/create-grocery-list" component={CreateGroceryList} />
+            <Route
+              path="/lists/:list_id"
+              component={ContainerIndividualGroceryList}
             />
-          
+            <Route
+              path="/recipes/:folder_id/:recipe_id"
+              component={IndividualRecipeContainer}
+            />
+            <Route path="/recipes/:folder_id" component={RecipeList} />
+            <Route path="/recipes" component={FolderList} />
+          </Switch>
         </div>
       </div>
-      </Switch>
-      
     );
   }
 }
