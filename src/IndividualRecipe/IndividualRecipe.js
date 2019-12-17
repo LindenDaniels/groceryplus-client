@@ -5,7 +5,7 @@ import './IndividualRecipe.css'
 import RecipeContext from '../Contexts/RecipeContext'
 import RecipeService from '../Services/RecipeService'
 
-export default class GroceryRecipe extends Component {
+export default class IndividualRecipe extends Component {
  
   static contextType = RecipeContext;
   
@@ -35,6 +35,6 @@ export default class GroceryRecipe extends Component {
 
   
   
-  GroceryRecipe.propType = {
+  IndividualRecipe.propType = {
     match: PropTypes.object.isRequired
   };

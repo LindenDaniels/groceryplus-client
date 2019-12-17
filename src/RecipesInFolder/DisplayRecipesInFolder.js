@@ -4,40 +4,31 @@ import RecipesInFolder from './RecipesInFolder'
 import RecipeService from '../Services/RecipeService';
 import FolderService from '../Services/FolderService';
 import FolderContext from '../Contexts/FolderContext'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
-export default class RecipeList extends Component {
+export default class DisplayRecipesInFolder extends Component {
   
   static contextType = RecipeContext;
   static contextType = FolderContext;
   
-  componentDidMount() {
-    FolderService.getFolders()
-    .then(this.context.setFolder)
-    .catch(this.context.setError) 
-  
-    RecipeService.getRecipes()
-      .then(this.context.setRecipe)
-      .catch(this.context.setError) 
-  }
-  
   render() {
-    const { recipes = [], folders = [] } = this.context;
-   
-    return ( 
-      
-      recipes.map(recipe =>
-                <RecipesInFolder
-                folder_id={folders.id}
-                id={recipe.id}
-                key={recipe.id}
-                name={recipe.name}
-                //ingredients={recipe.ingredients}
-                //instructions={recipe.instructions}
-                aria-controls="groceryRecipe__recipe"
-                className='groceryRecipe__grocery-link'
-                />        
-                
-    )
-    )} 
-  
+    const { name, id, folder_id} = this.props
+    
+    return (
+      <Link to={`/recipes/${folder_id}`} className='recipe-name'> 
+       <>
+       <header>
+           <h2>{name}</h2>
+       </header>
+        </>
+        </Link>
+        
+   ) }
 }
+
+  
+  
+  DisplayRecipesInFolder.propType = {
+    match: PropTypes.object.isRequired
+  };
