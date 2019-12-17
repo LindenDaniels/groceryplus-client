@@ -15,6 +15,7 @@ class IndividualRecipeContainer extends React.Component {
     render() {
       const recipe = this.context.recipes.find(recipe => +recipe.id === +this.props.match.params.recipe_id)
       return <IndividualRecipe {...recipe} />
+      
     }
   }
 

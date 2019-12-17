@@ -13,10 +13,10 @@ export default class DisplayRecipesInFolder extends Component {
   static contextType = FolderContext;
   
   render() {
-    const { name, id, folder_id} = this.props
+    const { name, id, folderid} = this.props
     
     return (
-      <Link to={`/recipes/${folder_id}`} className='recipe-name'> 
+      <Link to={`/recipes/${folderid}/${id}`} className='recipe-name'> 
        <>
        <header>
            <h2>{name}</h2>

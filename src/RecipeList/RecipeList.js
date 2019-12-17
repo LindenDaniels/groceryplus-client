@@ -18,6 +18,7 @@ export default class RecipeList extends Component {
   
   render() {
     const { recipes = [], folders = [] } = this.context;
+    console.log(folders)
    
     return ( 
       

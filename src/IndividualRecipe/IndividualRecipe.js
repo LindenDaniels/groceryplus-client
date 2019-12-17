@@ -11,10 +11,11 @@ export default class IndividualRecipe extends Component {
   
   
   render() {
-    const { name, id, folder_id, ingredients, instructions } = this.props
+    const { name, id, folderid, ingredients, instructions } = this.props
+    
     
     return (
-      <Link to={`/recipes/${folder_id}/${id}`} className='recipe-name'> 
+      <Link to={`/recipes/${folderid}/${id}`} className='recipe-name'> 
        <>
        <header>
            <h2>{name}</h2>
