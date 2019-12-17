@@ -10,9 +10,6 @@ export default class RecipeList extends Component {
   static contextType = RecipeContext;
   
   componentDidMount() {
-    FolderService.getFolders()
-    .then(this.context.setFolder)
-    .catch(this.context.setError) 
   
     RecipeService.getRecipes()
       .then(this.context.setRecipe)
