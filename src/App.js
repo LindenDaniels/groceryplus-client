@@ -51,9 +51,8 @@ class App extends Component {
               path="/recipes/:folder_id/:recipe_id"
               component={IndividualRecipeContainer}
             />
-            <Route path="/recipes/:folder_id" component={RecipeList} />
+            <Route path="/recipes/:folder_id" component={DisplayRecipesInFolder} />
             <Route path="/recipes" component={FolderList} />
-            <Route path="/recipes/:folder_id/:recipe_id" component={DisplayRecipesInFolder} />
           </Switch>
         </div>
       </div>
