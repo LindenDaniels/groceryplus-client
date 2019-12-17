@@ -20,7 +20,7 @@ class RecipesInFolder extends React.Component {
   
     render() {
       const recipes = this.context.recipes.filter(recipe => +recipe.folder_id === +this.props.match.params.folder_id )
-      return <DisplayRecipesInFolder {...folder} {...recipe} />
+      return <DisplayRecipesInFolder recipes={recipes} />
     }
   }
 
