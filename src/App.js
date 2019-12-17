@@ -10,6 +10,7 @@ import NavBar from './NavBar/NavBar';
 import RecipeList from './RecipeList/RecipeList';
 import './App.css';
 import { ListProvider } from './Contexts/ListContext';
+import DisplayRecipesInFolder from './RecipesInFolder/DisplayRecipesInFolder'
 import IndividualRecipeContainer from './Containers/IndividualRecipeContainer';
 
 
@@ -52,6 +53,7 @@ class App extends Component {
             />
             <Route path="/recipes/:folder_id" component={RecipeList} />
             <Route path="/recipes" component={FolderList} />
+            <Route path="/recipes/:folder_id/:recipe_id" component={DisplayRecipesInFolder} />
           </Switch>
         </div>
       </div>
