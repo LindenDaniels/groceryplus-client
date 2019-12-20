@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import RecipeContext from '../Contexts/RecipeContext'
-import RecipesInFolder from './RecipesInFolder'
-import RecipeService from '../Services/RecipeService';
-import FolderService from '../Services/FolderService';
 import FolderContext from '../Contexts/FolderContext'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';

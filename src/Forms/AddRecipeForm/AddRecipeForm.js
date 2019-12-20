@@ -1,8 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 import './AddRecipeForm.css';
-import RecipeContext from '../../Contexts/RecipeContext';
 import FolderContext from '../../Contexts/FolderContext';
 import FolderService from '../../Services/FolderService';
 import config from '../../config';
@@ -21,7 +18,7 @@ export default class AddRecipe extends React.Component {
         folderSelectValid: false,
         validationMessage: null
     };
-    //static contextType = RecipeContext;
+    
     static contextType = FolderContext;
 
     componentDidMount() {

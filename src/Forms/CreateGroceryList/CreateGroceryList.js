@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import ListContext from '../../Contexts/ListContext';
+import ListService from '../../Services/ListService';
+import config from '../../config';
 import './CreateGroceryList.css';
 
  class CreateGroceryList extends React.Component {
@@ -8,29 +11,30 @@ import './CreateGroceryList.css';
     state = {
         name: "",
         items: "",
-        id: "",
         formValid: false,
         nameValid: false,
         itemsValid: false,
         validationMessage: null
+    };
+    
+    static contextType = ListContext;
+
+    componentDidMount() {
+  
+        ListService.getLists()
+          .then(this.context.setList)
+          .catch(this.context.setError) 
+      }
+      
+    goBack = () => {
+        this.props.history.goBack();
     }
 
-updateFormEntry(e) {       
+    updateFormEntry(e) {       
         const name = e.target.name;
         const value = e.target.value;
-        
-        const id = Math.floor(Math.random() * 100) + 5;
-        
-        
-        /*if (e.target.selectedOptions) {
-            id = e.target.selectedOptions[0].id;
-            this.setState({
-                'folderId': id 
-            })
-        }*/
         this.setState({
             [e.target.name]: e.target.value,
-            id: id
             
         }, () => {this.validateEntry(name, value)});
     }
@@ -39,7 +43,6 @@ updateFormEntry(e) {
         let hasErrors = false;
 
         value = value.trim();
-        
         if ((name === 'name') || (name === 'items')) {
             if (value.length < 1) {
                 hasErrors = true
@@ -56,7 +59,6 @@ updateFormEntry(e) {
     }
 
     formValid() {
-        
         const { nameValid, itemsValid } = this.state;
         if (nameValid && itemsValid === true){
             this.setState({
@@ -70,26 +72,23 @@ updateFormEntry(e) {
         })}
       }
 
-   /* handleSubmit(e) {
+    handleSubmit(e) {
         e.preventDefault();
-        const { name, instructions, ingredients  } = this.state;
-        const recipe = {
+        const { name, items } = this.state;
+        const list = {
             name: name,
-            instructions: instructions,
-            ingredients: ingredients,
-            //modified: new Date()
+            items: items
         }
 
         this.setState({error: null})
 
-
-        GET(STORE), {
+        fetch(`${config.API_ENDPOINT}/lists`, {
             method: 'POST',
-            body: JSON.stringify(recipe),
+            body: JSON.stringify(list),
             headers: {
                 'content-type': 'application/json'
             }
-        }
+        })
         .then(res => {
             if (!res.ok) {
                 return res.json().then(err => {
@@ -98,35 +97,15 @@ updateFormEntry(e) {
                 })
             }
             return res.json()
-        }
+        })
         .then(data => {
             this.goBack()
-            this.context.addRecipe(data)
+            this.context.addList(data)
         })
         .catch(err => {
             this.setState({ err })
-        });
-    };*/
-
-    handleSubmit(e) {
-        e.preventDefault();
-        const { name, items, id } = this.state;
-        
-        const list = {
-            name: name,
-            items: items,
-            id: id
-           
-        }
-        const STORE = this.props.store;
-        const groceryLists = this.props.store.groceryLists
-        
-        
-        groceryLists.push(list);
-        this.props.history.push('/grocery-lists');
-
-        this.setState({error: null})
-    };
+        })
+    }
 
 
     render() {

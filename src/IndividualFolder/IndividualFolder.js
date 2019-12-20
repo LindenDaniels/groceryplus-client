@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import './IndividualFolder.css'
 import FolderContext from '../Contexts/FolderContext'
-import FolderService from '../Services/FolderService'
 
 export default class IndividualFolder extends Component {
  
