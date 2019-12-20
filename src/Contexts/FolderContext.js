@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import FolderService from '../Services/FolderService';
 
 const FolderContext = React.createContext({
   folders: [],
@@ -27,6 +28,16 @@ export class FolderProvider extends Component {
   clearError = () => {
     this.setState({ error: null })
   }
+
+  /*componentDidMount(){
+    // fetch call to get all folders
+    // this.setState({folders})
+  
+    FolderService.getFolders()
+    .then(this.context.setFolder)
+    .catch(this.context.setError) 
+}*/
+
 
   render() {
     const contextValue = {

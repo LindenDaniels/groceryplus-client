@@ -27,8 +27,7 @@ export default class FolderList extends Component {
                 name={folder.name}
                 aria-controls="groceryFolder__folder"
                 className='groceryFolder__grocery-link'
-                />        
-                
+                />                 
     )
     )} 
   
