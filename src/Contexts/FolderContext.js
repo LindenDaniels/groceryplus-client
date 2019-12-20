@@ -29,14 +29,14 @@ export class FolderProvider extends Component {
     this.setState({ error: null })
   }
 
-  /*componentDidMount(){
+  componentDidMount(){
     // fetch call to get all folders
     // this.setState({folders})
   
     FolderService.getFolders()
     .then(this.context.setFolder)
     .catch(this.context.setError) 
-}*/
+}
 
 
   render() {
