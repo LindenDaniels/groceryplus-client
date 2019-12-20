@@ -129,7 +129,7 @@ export default class AddRecipe extends React.Component {
     render() {
         const { folders = [] } = this.context;
         console.log(folders)
-        const options = folders.map(folder => {
+        const options = folders.map((folder) => {
             return (
             <option 
                 key ={folder.id} 
