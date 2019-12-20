@@ -16,7 +16,7 @@ class RecipesInFolder extends React.Component {
   
     render() {
         const recipes = this.context.recipes.filter(recipe => +recipe.folderid === +this.props.match.params.folder_id )
-        return recipes.map(recipe =>  <DisplayRecipesInFolder {...recipe} /> )
+        return recipes.map(recipe =>  <DisplayRecipesInFolder key={recipe.id} {...recipe} /> )
       }
   }
 

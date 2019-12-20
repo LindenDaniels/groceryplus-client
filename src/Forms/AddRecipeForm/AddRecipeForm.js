@@ -144,11 +144,16 @@ export default class AddRecipe extends React.Component {
             )
         })
         return (
+            <>
+            <header>
+                <h2>Add Recipe</h2>
+            </header>
+           
             <form 
-                className="Recipe-form"
+                className="addrecipe-form"
                 onSubmit={e => this.handleSubmit(e)}>
-                <h2 className="name">Add Recipe</h2>
-                <div className="form-group">
+                <h2 className="title">Add Recipe</h2>
+                <div className="form-section">
                   <label htmlFor="name">Recipe Name</label>
                   <input 
                     type="text" 
@@ -160,7 +165,7 @@ export default class AddRecipe extends React.Component {
                     placeholder="Recipe Name"
                     onChange={e => this.updateFormEntry(e)}/>
                 </div>
-                <div className="form-group">
+                <div className="form-section">
                    <label htmlFor="content">Instructions</label>
                    <textarea 
                         className="field"
@@ -218,7 +223,7 @@ export default class AddRecipe extends React.Component {
                     placeholder="Almond Milk"
                     onChange={e => this.updateFormEntry(e)}/>
                 </div>
-                <div className="form-group">
+                <div className="form-section">
                   <label htmlFor="folder-select">folder</label>
                   <select 
                     type="text" 
@@ -248,6 +253,7 @@ export default class AddRecipe extends React.Component {
                  </button>
                 </div>
             </form> 
+            </>
         )
     }
 }

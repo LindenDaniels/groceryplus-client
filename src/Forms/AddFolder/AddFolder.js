@@ -98,11 +98,15 @@ export default class AddFolder extends React.Component {
     render() {
         
         return (
+            <>
+            <header>
+                <h2>Add Folder</h2>
+            </header>
             <form 
                 className="folder-form"
                 onSubmit={e => this.handleSubmit(e)}>
                 <h2 className="title">Add Folder</h2>
-                <div className="form-group">
+                <div className="form-section">
                   <label htmlFor="title">Title</label>
                   <input 
                     type="text" 
@@ -131,6 +135,7 @@ export default class AddFolder extends React.Component {
                  {}
                 </div>
             </form> 
+            </>
         )
     }
 }
