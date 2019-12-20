@@ -7,10 +7,8 @@ export default class IndividualRecipe extends Component {
  
   static contextType = RecipeContext;
   
-  
   render() {
     const { name, id, ingredients, instructions } = this.props
-    
     
     return (
        <>

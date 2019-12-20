@@ -25,7 +25,6 @@ export default class DisplayRecipesInFolder extends Component {
 }
 
   
-  
   DisplayRecipesInFolder.propType = {
     match: PropTypes.object.isRequired
   };

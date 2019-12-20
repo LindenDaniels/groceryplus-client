@@ -9,12 +9,11 @@ export default class GroceryList extends Component {
  
   static contextType = ListContext;
   
-  
   render() {
     const { name, id, items } = this.props
     
     return (
-      <Link to={`/lists/${id}`} className='list-item'> 
+      <Link to={`/lists/${id}`} className='list-item'> */
        <>
        <header>
            <h2>{name}</h2>
@@ -27,12 +26,10 @@ export default class GroceryList extends Component {
           </ul>
         </section>
         </>
-        </Link>
-        
-   ) }
+        </Link>  
+   )}
 }
 
-  
   
   GroceryList.propType = {
     match: PropTypes.object.isRequired

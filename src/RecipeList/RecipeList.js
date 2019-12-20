@@ -18,18 +18,14 @@ export default class RecipeList extends Component {
   
   render() {
     const { recipes = [], folders = [] } = this.context;
-    console.log(folders)
    
     return ( 
-      
       recipes.map(recipe =>
                 <IndividualRecipe
                 folder_id={folders.id}
                 id={recipe.id}
                 key={recipe.id}
                 name={recipe.name}
-                //ingredients={recipe.ingredients}
-                //instructions={recipe.instructions}
                 aria-controls="groceryRecipe__recipe"
                 className='groceryRecipe__grocery-link'
                 />        
