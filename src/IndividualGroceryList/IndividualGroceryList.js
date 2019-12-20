@@ -13,7 +13,7 @@ export default class GroceryList extends Component {
     const { name, id, items } = this.props
     
     return (
-      <Link to={`/lists/${id}`} className='list-item'> */
+      <Link to={`/lists/${id}`} className='list-item'>
        <>
        <header>
            <h2>{name}</h2>
@@ -26,7 +26,7 @@ export default class GroceryList extends Component {
           </ul>
         </section>
         </>
-        </Link>  
+        </Link>
    )}
 }
 

@@ -35,7 +35,7 @@ class App extends Component {
             <Route exact path="/" component={LandingPage} />
             <Route path="/add-recipe" component={AddRecipe} />
 
-            <Route path="/lists" component={GroceryLists} />
+            <Route exact path="/lists" component={GroceryLists} />
             <Route path="/create-grocery-list" component={CreateGroceryList} />
             <Route
               path="/lists/:list_id"
