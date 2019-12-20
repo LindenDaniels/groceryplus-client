@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import ListContext from '../../Contexts/ListContext';
 import ListService from '../../Services/ListService';

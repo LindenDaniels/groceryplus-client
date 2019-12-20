@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import './IndividualGroceryList.css'
 import ListContext from '../Contexts/ListContext'
-import ListService from '../Services/ListService'
 
 export default class GroceryList extends Component {
  
