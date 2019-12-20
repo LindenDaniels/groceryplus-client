@@ -1,6 +1,6 @@
 import React from 'react';
-import FolderContext from '../Contexts/FolderContext';
-import config from './config';
+import FolderContext from '../../Contexts/FolderContext';
+import config from '../../config';
 import PropTypes from 'prop-types';
 
 export default class AddFolder extends React.Component {

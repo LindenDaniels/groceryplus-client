@@ -13,6 +13,8 @@ import { ListProvider } from './Contexts/ListContext';
 import DisplayRecipesInFolder from './RecipesInFolder/DisplayRecipesInFolder'
 import IndividualRecipeContainer from './Containers/IndividualRecipeContainer';
 import RecipesInFolder from './RecipesInFolder/RecipesInFolder'
+import AddFolder from './Forms/AddFolder/AddFolder';
+
 
 
 class App extends Component {
@@ -54,6 +56,7 @@ class App extends Component {
             />
             <Route path="/recipes/:folder_id" component={RecipesInFolder} />
             <Route path="/recipes" component={FolderList} />
+            <Route path="/add-folder" component={AddFolder} />
           </Switch>
         </div>
       </div>

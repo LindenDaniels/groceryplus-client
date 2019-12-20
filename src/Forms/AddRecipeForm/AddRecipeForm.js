@@ -5,8 +5,6 @@ import './AddRecipeForm.css';
 import RecipeContext from '../../Contexts/RecipeContext';
 import FolderContext from '../../Contexts/FolderContext';
 import FolderService from '../../Services/FolderService';
-
-
 import config from '../../config';
 
 export default class AddRecipe extends React.Component {

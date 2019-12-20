@@ -20,6 +20,12 @@ export default class NavBar extends Component {
                 Add Recipe
             </NavLink>
             <NavLink
+              className='nav-link'
+              to='/add-folder'>
+                Add Folder
+
+            </NavLink>
+            <NavLink
                className='nav-link'
                to='/recipes'>
                    Recipe List
