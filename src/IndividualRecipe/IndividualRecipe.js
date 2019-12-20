@@ -15,7 +15,7 @@ export default class IndividualRecipe extends Component {
     
     
     return (
-      <Link to={`/recipes/${folderid}/${id}`} className='recipe-name'> 
+      /*<Link to={`/recipes/${folderid}/${id}`} className='recipe-name'>*/
        <>
        <header>
            <h2>{name}</h2>
@@ -29,7 +29,7 @@ export default class IndividualRecipe extends Component {
           </ul>
         </section>
         </>
-        </Link>
+        /*</Link>*/
         
    ) }
 }
