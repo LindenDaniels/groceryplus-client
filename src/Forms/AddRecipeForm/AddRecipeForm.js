@@ -4,6 +4,8 @@ import { withRouter } from 'react-router-dom';
 import './AddRecipeForm.css';
 import RecipeContext from '../../Contexts/RecipeContext';
 import FolderContext from '../../Contexts/FolderContext';
+import FolderService from '../../Services/FolderService';
+
 
 import config from '../../config';
 
@@ -23,6 +25,14 @@ export default class AddRecipe extends React.Component {
     };
     //static contextType = RecipeContext;
     static contextType = FolderContext;
+
+    componentDidMount() {
+  
+        FolderService.getFolders()
+          .then(this.context.setFolder)
+          .catch(this.context.setError) 
+      }
+      
    
   
 
@@ -128,7 +138,7 @@ export default class AddRecipe extends React.Component {
     
     render() {
         const { folders = [] } = this.context;
-        console.log(folders)
+       
         const options = folders.map((folder) => {
             return (
             <option 
@@ -144,7 +154,7 @@ export default class AddRecipe extends React.Component {
                 onSubmit={e => this.handleSubmit(e)}>
                 <h2 className="name">Add Recipe</h2>
                 <div className="form-group">
-                  <label htmlFor="name">Name</label>
+                  <label htmlFor="name">Recipe Name</label>
                   <input 
                     type="text" 
                     className="field"
@@ -156,14 +166,62 @@ export default class AddRecipe extends React.Component {
                     onChange={e => this.updateFormEntry(e)}/>
                 </div>
                 <div className="form-group">
-                   <label htmlFor="content">Recipe:</label>
+                   <label htmlFor="content">Instructions</label>
                    <textarea 
                         className="field"
                         name="instructions" 
                         id="instructions"
-                        aria-label="Recipe"
+                        aria-label="Instructions"
                         aria-required="false"
                         onChange={e => this.updateFormEntry(e)}/>
+                </div>
+                <div className="form-section">
+                  <label htmlFor="ingredients">Ingredients</label>
+                  <input 
+                    type="text" 
+                    className="field"
+                    name="ingredients" 
+                    id="ingredients" 
+                    aria-label="ingredients"
+                    aria-required="true"
+                    placeholder="Almond Milk"
+                    onChange={e => this.updateFormEntry(e)}/>
+                    <input 
+                    type="text" 
+                    className="field"
+                    name="ingredients" 
+                    id="ingredients-1" 
+                    aria-label="ingredients"
+                    aria-required="true"
+                    placeholder="Almond Milk"
+                    onChange={e => this.updateFormEntry(e)}/>
+                    <input 
+                    type="text" 
+                    className="field"
+                    name="ingredients" 
+                    id="ingredients-2" 
+                    aria-label="ingredients"
+                    aria-required="true"
+                    placeholder="Almond Milk"
+                    onChange={e => this.updateFormEntry(e)}/>
+                    <input 
+                    type="text" 
+                    className="field"
+                    name="ingredients" 
+                    id="ingredients-3" 
+                    aria-label="ingredients"
+                    aria-required="true"
+                    placeholder="Almond Milk"
+                    onChange={e => this.updateFormEntry(e)}/>
+                    <input 
+                    type="text" 
+                    className="field"
+                    name="ingredients" 
+                    id="ingredients-4" 
+                    aria-label="ingredients"
+                    aria-required="true"
+                    placeholder="Almond Milk"
+                    onChange={e => this.updateFormEntry(e)}/>
                 </div>
                 <div className="form-group">
                   <label htmlFor="folder-select">folder</label>
