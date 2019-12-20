@@ -26,7 +26,7 @@ const RecipeService = {
           : res.json()
       )
   },
-  getRecipe(recipe_id, folder_id) {
+  getRecipe(recipe_id) {
     
     return fetch(`${config.API_ENDPOINT}/recipes/${recipe_id}`, {
       headers: {

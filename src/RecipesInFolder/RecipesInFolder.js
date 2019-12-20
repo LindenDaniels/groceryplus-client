@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import DisplayRecipesInFolder from './DisplayRecipesInFolder'
-import FolderService from '../Services/FolderService'
 import FolderContext from '../Contexts/FolderContext'
 import RecipeContext from '../Contexts/RecipeContext'
 import RecipeService from '../Services/RecipeService'

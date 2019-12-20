@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import GroceryList from '../IndividualGroceryList/IndividualGroceryList'
 import ListService from '../Services/ListService'
 import ListContext from '../Contexts/ListContext'

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Route, Link, NavLink, withRouter } from 'react-router-dom';
-import AddRecipe from '../Forms/AddRecipeForm/AddRecipeForm';
+import { NavLink } from 'react-router-dom';
+
 
 export default class NavBar extends Component {
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import IndividualRecipe from '../IndividualRecipe/IndividualRecipe'
 import RecipeService from '../Services/RecipeService'
 import RecipeContext from '../Contexts/RecipeContext'

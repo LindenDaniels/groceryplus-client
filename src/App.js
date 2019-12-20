@@ -7,10 +7,7 @@ import FolderList from './FolderList/FolderList';
 import ContainerIndividualGroceryList from './Containers/IndividualListContainer'
 import LandingPage from './LandingPage/LandingPage';
 import NavBar from './NavBar/NavBar';
-import RecipeList from './RecipeList/RecipeList';
 import './App.css';
-import { ListProvider } from './Contexts/ListContext';
-import DisplayRecipesInFolder from './RecipesInFolder/DisplayRecipesInFolder'
 import IndividualRecipeContainer from './Containers/IndividualRecipeContainer';
 import RecipesInFolder from './RecipesInFolder/RecipesInFolder'
 import AddFolder from './Forms/AddFolder/AddFolder';
@@ -28,12 +25,6 @@ class App extends Component {
     };
   }
   render() {
-    const contextValue = {
-      lists: this.state.lists,
-      folders: this.state.folders,
-      recipes: this.state.recipes
-
-    };
     
     return (
       <div className="App">
