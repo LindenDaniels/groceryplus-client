@@ -124,6 +124,7 @@ export default class AddRecipe extends React.Component {
         .then(data => {
             this.goBack()
             this.context.addRecipe(data)
+            this.props.history.push('/recipes')
         })
         .catch(err => {
             this.setState({ err })
