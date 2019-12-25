@@ -32,7 +32,7 @@ export default function LandingPage() {
             <h3>Add Your Own Recipes</h3>
         </header>
         <p>[<em>placeholder for screenshot of recipe adding form</em>]</p>
-        <p>Add your own recipe and automatically add the ingredients to your grocery list.</p>
+        <p>Add your own recipes!</p>
       </section>
       
    

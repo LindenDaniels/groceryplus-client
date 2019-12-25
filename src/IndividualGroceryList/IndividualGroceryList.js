@@ -5,31 +5,32 @@ import './IndividualGroceryList.css'
 import ListContext from '../Contexts/ListContext'
 
 export default class GroceryList extends Component {
- 
+
   static contextType = ListContext;
-  
+
   render() {
     const { name, id, items } = this.props
-    
+
     return (
       <Link to={`/lists/${id}`} className='list-item'>
-       <>
-       <header>
-           <h2>{name}</h2>
-       </header>
-        <section className='GroceryLists'> 
-          <ul>
+        <>
+          <header>
+            <h2>{name}</h2>
+          </header>
+          <section className='GroceryLists'>
+            <ul>
               <li key={id} className='groceryList-items'>
-               {items}
+                {items}
               </li>
-          </ul>
-        </section>
+            </ul>
+          </section>
         </>
-        </Link>
-   )}
+      </Link>
+    )
+  }
 }
 
-  
-  GroceryList.propType = {
-    match: PropTypes.object.isRequired
-  };
+
+GroceryList.propType = {
+  match: PropTypes.object.isRequired
+};
