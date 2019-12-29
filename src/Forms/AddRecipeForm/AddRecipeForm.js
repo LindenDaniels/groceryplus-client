@@ -126,8 +126,11 @@ class AddRecipe extends React.Component {
            
             this.context.addRecipe(data)
             
+            
             const recipeUrl = `/recipes/${folderId}`
+           
             this.props.history.push(recipeUrl)
+            console.log(this.props.history)
             
 
 
