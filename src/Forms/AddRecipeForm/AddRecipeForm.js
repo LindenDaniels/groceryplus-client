@@ -101,7 +101,7 @@ export default class AddRecipe extends React.Component {
             ingredients: ingredients,
             folderid: folderId,
         }
-
+       
         this.setState({error: null})
 
         
@@ -124,13 +124,19 @@ export default class AddRecipe extends React.Component {
         .then(data => {
             this.goBack()
             this.context.addRecipe(data)
-            this.props.history.push('/recipes')
+            
+            const recipeUrl = `/recipes/${folderId}`
+            this.props.history.push(recipeUrl)
+            
+
+
+        this.setState({ error: null })
         })
         .catch(err => {
             this.setState({ err })
         })
     }
-
+    
     
     render() {
         const { folders = [] } = this.context;
