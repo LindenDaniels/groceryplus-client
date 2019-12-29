@@ -122,7 +122,7 @@ export default class AddRecipe extends React.Component {
             return res.json()
         })
         .then(data => {
-            this.goBack()
+           
             this.context.addRecipe(data)
             
             const recipeUrl = `/recipes/${folderId}`
