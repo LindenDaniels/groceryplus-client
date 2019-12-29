@@ -1,10 +1,11 @@
 import React from 'react';
+import { withRouter } from 'react-router'
 import './AddRecipeForm.css';
 import FolderContext from '../../Contexts/FolderContext';
 import FolderService from '../../Services/FolderService';
 import config from '../../config';
 
-export default class AddRecipe extends React.Component {
+class AddRecipe extends React.Component {
     state = {
         name: "",
         instructions: "",
@@ -264,4 +265,6 @@ export default class AddRecipe extends React.Component {
         )
     }
 }
+
+export default withRouter(AddRecipe)
 
