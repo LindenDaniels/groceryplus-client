@@ -1,15 +1,16 @@
 
 
 .landing-section {
-    font-family: "Open Sans",
-    sans-serif;
     font-size: 20px;
     text-align: center;
     line-height: 1.5;
+    
   }
+.landing-section img {
+  border: 1px black;
+}
   
-  nav,
-  footer {
+  nav {
     padding: 1% 0;
     background-color: #aaa;
   }

@@ -15,7 +15,7 @@ export default class GroceryList extends Component {
       <Link to={`/lists/${id}`} className='list-item'>
         <>
           <header>
-            <h2>{name}</h2>
+            <h2 className='list-name'>{name}</h2>
           </header>
           <section className='list-section'>
             <ul>

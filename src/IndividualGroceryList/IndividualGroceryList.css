@@ -18,14 +18,13 @@
     z-index: 10;
   }
   
-  header {
-    padding: 45px 15px;
+  .list-name:hover {
+    color: #7BC25C;
   }
-  
-  .list-section {
+  /*.list-section {
     min-height: 200px;
     padding: 30px 15px;
-  }
+  }*/
   
   
   p {

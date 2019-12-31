@@ -13,12 +13,12 @@ export default class IndividualRecipe extends Component {
     return (
        <>
        <header>
-           <h2>{name}</h2>
+           <h2 className='recipe-name'>{name}</h2>
        </header>
         <section className='recipes'> 
           <ul>
               <li key={id} className='recipe-items'>
-               {ingredients}
+               {ingredients}<br />
                {instructions}
               </li>
           </ul>

@@ -3,6 +3,7 @@ import RecipeContext from '../Contexts/RecipeContext'
 import FolderContext from '../Contexts/FolderContext'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
+import './DisplayRecipesInFolder.css'
 
 export default class DisplayRecipesInFolder extends Component {
   
@@ -16,7 +17,7 @@ export default class DisplayRecipesInFolder extends Component {
       <Link to={`/recipes/${folderid}/${id}`} className='recipe-name'> 
        <>
        <header>
-           <h2>{name}</h2>
+           <h2 className='recipe-name-link'>{name}</h2>
        </header>
         </>
         </Link>

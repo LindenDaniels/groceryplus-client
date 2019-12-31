@@ -22,6 +22,7 @@ export default class RecipeList extends Component {
     return ( 
       recipes.map(recipe =>
                 <IndividualRecipe
+                className= 'recipe-name-link'
                 folder_id={folders.id}
                 id={recipe.id}
                 key={recipe.id}
