@@ -36,11 +36,11 @@
   section {
     min-height: 200px;
     padding: 30px 15px;
-    background-color: #bbb;
+    background-color: #00BFE0;
   }
   
   section:nth-child(even) {
-    background-color: #ddd;
+    background-color: #00BFE0;
   }
   
   p {
