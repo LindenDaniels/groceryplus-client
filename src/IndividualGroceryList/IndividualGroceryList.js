@@ -17,7 +17,7 @@ export default class GroceryList extends Component {
           <header>
             <h2>{name}</h2>
           </header>
-          <section className='GroceryLists'>
+          <section className='list-section'>
             <ul>
               <li key={id} className='groceryList-items'>
                 {items}

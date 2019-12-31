@@ -1,16 +1,9 @@
 
-* {
-    box-sizing: border-box;
-  }
-  header {
-    padding: 45px 15px;
-}
 
-.landing {
+.landing-section {
     font-family: "Open Sans",
     sans-serif;
     font-size: 20px;
-    color: #444;
     text-align: center;
     line-height: 1.5;
   }
@@ -30,15 +23,13 @@
   }
   
   
-  section {
+  .landing-section {
     min-height: 200px;
     padding: 30px 15px;
-    background-color: #00BFE0;
+   
   }
   
-  section:nth-child(even) {
-    background-color: #00BFE0;
-  }
+ 
   
   p {
     margin: 0 auto;

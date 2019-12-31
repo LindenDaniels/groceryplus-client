@@ -7,26 +7,26 @@ export default class AddFolder extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-        hasErrors: false,
-        title: "",
-        formValid: false,
-        titleValid: false,
-        validationMessage: "",
+            hasErrors: false,
+            title: "",
+            formValid: false,
+            titleValid: false,
+            validationMessage: "",
         };
     }
 
     static contextType = FolderContext;
-    
+
     goBack = () => {
         this.props.history.goBack();
     }
 
-    updateFormEntry(e) {           
+    updateFormEntry(e) {
         const name = e.target.name;
         const value = e.target.value;
         this.setState({
             [e.target.name]: e.target.value
-        }, () => {this.validateEntry(name, value)});
+        }, () => { this.validateEntry(name, value) });
     }
 
     validateEntry(name, value) {
@@ -36,8 +36,8 @@ export default class AddFolder extends React.Component {
         value = value.trim();
         if (value < 1) {
             inputErrors = `${name} is required.`;
-        } 
-        
+        }
+
         else {
             inputErrors = '';
             hasErrors = false;
@@ -46,21 +46,23 @@ export default class AddFolder extends React.Component {
             validationMessage: inputErrors,
             [`${name}Valid`]: !hasErrors,
             hasErrors: !hasErrors
-        }, this.formValid );
+        }, this.formValid);
     }
 
     formValid() {
         const { titleValid } = this.state;
-        if (titleValid === true){
+        if (titleValid === true) {
             this.setState({
                 formValid: true
             });
         }
-        else {this.setState({
-            formValid: !this.formValid
+        else {
+            this.setState({
+                formValid: !this.formValid
             }
-        )}
-      }
+            )
+        }
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -69,7 +71,7 @@ export default class AddFolder extends React.Component {
             name: title
         }
 
-        this.setState({error: null})
+        this.setState({ error: null })
         fetch(`${config.API_ENDPOINT}/folders`, {
             method: 'POST',
             body: JSON.stringify(folder),
@@ -77,64 +79,64 @@ export default class AddFolder extends React.Component {
                 'content-type': 'application/json'
             }
         })
-        .then(res => {
-            if (!res.ok) {
-                return res.json().then(error => {
-                    console.log(`Error is: ${error}`)
-                    throw error
-                })
-            }
-            return res.json()
-        })
-        .then(data => {
-            this.goBack()
-            this.context.addFolder(data)
-        })
-        .catch(error => {
-            this.setState({ error })
-        })
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(error => {
+                        console.log(`Error is: ${error}`)
+                        throw error
+                    })
+                }
+                return res.json()
+            })
+            .then(data => {
+                this.goBack()
+                this.context.addFolder(data)
+            })
+            .catch(error => {
+                this.setState({ error })
+            })
     }
 
     render() {
-        
+
         return (
             <>
-            <header>
-                <h2>Add Folder</h2>
-            </header>
-            <form 
-                className="folder-form"
-                onSubmit={e => this.handleSubmit(e)}>
-                <h2 className="title">Add Folder</h2>
-                <div className="form-section">
-                  <label htmlFor="title">Title</label>
-                  <input 
-                    type="text" 
-                    className="field"
-                    name="title" 
-                    id="title" 
-                    aria-label="Title"
-                    aria-required="true"
-                    placeholder="Folder Title"
-                    aria-placeholder="Folder Title"
-                    onChange={e => this.updateFormEntry(e)}/>
-                </div>
-                <div className="buttons">
-                 <button 
-                    type="button" 
-                    className="button"
-                    onClick={() => this.goBack()}>
-                     Cancel
+                <header>
+                    <h2>Add Folder</h2>
+                </header>
+                <form
+                    className="folder-form"
+                    onSubmit={e => this.handleSubmit(e)}>
+                    <h2 className="title">Add Folder</h2>
+                    <div className="form-section">
+                        <label htmlFor="title">Title</label>
+                        <input
+                            type="text"
+                            className="field"
+                            name="title"
+                            id="title"
+                            aria-label="Title"
+                            aria-required="true"
+                            placeholder="Folder Title"
+                            aria-placeholder="Folder Title"
+                            onChange={e => this.updateFormEntry(e)} />
+                    </div>
+                    <div className="buttons">
+                        <button
+                            type="button"
+                            className="button"
+                            onClick={() => this.goBack()}>
+                            Cancel
                  </button>
-                 <button 
-                    type="submit" 
-                    className="button"
-                    disabled={this.state.formValid === false}>
-                     Save
+                        <button
+                            type="submit"
+                            className="button"
+                            disabled={this.state.formValid === false}>
+                            Save
                  </button>
-                 {}
-                </div>
-            </form> 
+                        {}
+                    </div>
+                </form>
             </>
         )
     }

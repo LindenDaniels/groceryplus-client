@@ -33,7 +33,7 @@ export default class NavBar extends Component {
             <NavLink
                className='nav-link'
                to='/create-grocery-list'>
-                   Create a Grocery List
+                   Add Grocery List
             </NavLink>
             <NavLink
                className='nav-link'

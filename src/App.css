@@ -1,7 +1,39 @@
-.NavBar,
-footer {
+* {
+  box-sizing: border-box;
+}
+
+header {
+  padding: 45px 15px;
+}
+
+body {
+  font-family: "Open Sans",
+  sans-serif;
+  font-size: 20px;
+  background-color: #799CCC;
+  color: black;
+  text-align: center;
+  line-height: 1.5;
+  min-width: 320px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-link {
+    margin-right: 15px;
+    color: #7BC25C;
+}
+
+a:hover {
+  color: #7EA2D9;
+}
+
+.NavBar {
   padding: 1% 0;
-  background-color: #aaa;
+  background-color: #2D3A4D;
+  color: white;
 }
 
 .NavBar {
@@ -11,16 +43,3 @@ footer {
   right: 0;
   z-index: 10;
 }
-
-.nav-link {
-    margin-right: 15px
-}
-
-body {
-    font-family: "Open Sans",
-    sans-serif;
-    font-size: 20px;
-    color: #444;
-    text-align: center;
-    line-height: 1.5;
-  }
