@@ -11,7 +11,7 @@ export default function LandingPage() {
       <header className="landing-header">
         <h1>Grocery Plus</h1>
         <h2>The grocery list with a twist.</h2>
-        <img src="https://i.ibb.co/PmZ6PNr/food-1932466.jpg" alt="picture of food"></img>
+        <img src="https://i.ibb.co/PmZ6PNr/food-1932466.jpg" alt="food"></img>
       </header>
     </section>
       <section className="landing-section">
