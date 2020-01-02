@@ -127,7 +127,6 @@ class AddRecipe extends React.Component {
                 return res.json()
             })
             .then(data => {
-                //this.context.addRecipe(data)
                 const recipeUrl = `/recipes/${data.folderid}`
                 this.props.history.push(recipeUrl);
                 this.setState({ error: null })

@@ -3,7 +3,6 @@ import './RecipeList.css'
 import RecipeContext from '../Contexts/RecipeContext'
 import IndividualRecipe  from '../IndividualRecipe/IndividualRecipe'
 import RecipeService from '../Services/RecipeService';
-import FolderService from '../Services/FolderService';
 
 export default class RecipeList extends Component {
   
