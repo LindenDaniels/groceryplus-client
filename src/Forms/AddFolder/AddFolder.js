@@ -102,7 +102,7 @@ export default class AddFolder extends React.Component {
         return (
             <>
                 <header>
-                    <h2>Add Folder</h2>
+                    <h1>Add Folder</h1>
                 </header>
                 <form
                     className="folder-form"

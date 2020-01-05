@@ -15,15 +15,6 @@
     margin-top: 15px;
   }
   
-  form {
-    text-align: left;
-  }
-  
-  input, textarea {
-    width: 100%;
-    max-width: 500px;
-    margin-right: 10px;
-  }
   
   input[type="number"] {
     width: 50px;

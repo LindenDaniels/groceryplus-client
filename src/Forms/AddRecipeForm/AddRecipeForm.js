@@ -152,7 +152,7 @@ class AddRecipe extends React.Component {
         return (
             <>
                 <header>
-                    <h2>Add Recipe</h2>
+                    <h2 className="addrecipe-header">Add Recipe</h2>
                 </header>
 
                 <form
@@ -230,7 +230,7 @@ class AddRecipe extends React.Component {
                             onChange={e => this.updateFormEntry(e)} />
                     </div>
                     <div className="form-section">
-                        <label htmlFor="folder-select">folder</label>
+                        <label htmlFor="folder-select">Folder</label>
                         <select
                             type="text"
                             className="field"

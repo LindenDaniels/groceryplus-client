@@ -21,7 +21,6 @@
     
   }
   
- 
 
   
   p {
@@ -31,4 +30,19 @@
   
   p + p {
     margin-top: 15px;
+  }
+
+  .recipe-name-link:hover {
+    color: #7BC25C;
+  }
+
+  .recipe-name, .recipe-name-link {
+    color: #7BC25C;
+    border-radius: 8px;
+    background-color: black;
+    max-width: 300px;
+    margin: auto;
+    font-family: 'Girassol', cursive;
+
+
   }

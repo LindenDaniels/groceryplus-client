@@ -1,21 +1,47 @@
 
-  p {
+  .addrecipe-form {
+    margin: auto;
+    
+  }
+
+  h1 {
+    color: #B73131;
+  }
+    p {
     margin: 0 auto;
     max-width: 650px;
+    font-size: large;
   }
   
   p + p {
     margin-top: 15px;
+    font-size: large;
   }
   
-  form {
-    text-align: left;
+
+  .folder-select {
+    font-size: large;
+  }
+
+  .field {
+    font-size: large;
   }
   
   input, textarea {
+    font-size: large;
     width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
     max-width: 500px;
     margin-right: 10px;
+  }
+.button {
+  width: 100px;
+  height: 25px;
+  color: #B73131;
+}
+  .addrecipe-header, .title {
+    color: #B73131;
   }
   
   input[type="number"] {
@@ -28,5 +54,11 @@
   
   .form-section {
     margin-bottom: 30px;
+    color: #B73131;
   }
+
+  .button {
+
+  }
+
   

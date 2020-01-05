@@ -8,17 +8,9 @@
   .recipe-name-link:hover {
     color: #7BC25C;
   }
-  /*
-  
-  p {
-    margin: 0 auto;
-    max-width: 650px;
-  }
-  
-  p + p {
-    margin-top: 15px;
-  }
 
-  ul {
-      list-style: none;
+  .recipe-name, .recipe-name-link {
+    border: 3px solid #7BC25C;
+    border-radius: 8px;
+
   }
