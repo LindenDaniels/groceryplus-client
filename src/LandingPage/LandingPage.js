@@ -35,6 +35,8 @@ export default function LandingPage() {
         <img src="https://i.ibb.co/Rjx7mrx/Screen-Shot-2020-01-05-at-8-53-14-PM.png" alt="Add recipe interface"></img>
         <p>Add your own recipes!</p>
       </section>
+      <section><a href="https://icons8.com/icon/41651/home">Home icon by Icons8</a></section>
+
 
     </>
 

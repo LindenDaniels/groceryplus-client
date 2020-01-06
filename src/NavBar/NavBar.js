@@ -11,7 +11,8 @@ export default class NavBar extends Component {
             <NavLink
                 className='nav-link'
                 to='/'>
-                    Home
+                  <img src="https://img.icons8.com/ultraviolet/40/000000/home.png" className="home-img"></img>
+                  Home
             </NavLink>
           
             <NavLink
