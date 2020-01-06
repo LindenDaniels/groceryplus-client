@@ -4,6 +4,12 @@
     
   }
 
+  .content {
+    padding-top: 20px;
+    margin: auto;
+    width: 80vw;
+  }
+
   h1 {
     color: #B73131;
   }
